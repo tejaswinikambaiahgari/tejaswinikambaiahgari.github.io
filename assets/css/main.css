@@ -1627,77 +1627,69 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* ==== Skills (image hover cards) ==== */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-@media (max-width: 992px) {
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 576px) {
-  .skills-grid { grid-template-columns: 1fr; }
-}
-
-.skill-card {
+/* ==== Skills: photo card with sticky title + hover description ==== */
+.services .service-item {
   position: relative;
-  aspect-ratio: 4 / 3;              /* keeps cards uniform */
-  border-radius: 16px;
+  padding: 0;
+  height: 260px;                 /* adjust as you like */
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  cursor: pointer;
-  transform: translateZ(0);          /* enables smooth transforms */
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  border: none;
 }
 
-.skill-card .skill-image,
-.skill-card .skill-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform .45s ease, filter .45s ease, opacity .45s ease;
+/* Full photo */
+.services .service-item .icon {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  margin: 0; border-radius: 0; background: transparent; overflow: hidden;
+}
+.services .service-item .icon img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .45s ease, filter .45s ease;
 }
 
-.skill-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.85) 100%);
+/* Always-visible title pill at top */
+.services .service-item .title {
+  position: absolute; top: 12px; left: 12px;
+  z-index: 3;
+  padding: 8px 12px;
+  background: rgba(10,10,10,0.65);
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 18px 16px;
+  font-weight: 800;
+  font-size: 16px;
+  border-radius: 10px;
+  letter-spacing: .2px;
+  line-height: 1;
+}
+
+/* Hover description overlay (hidden by default) */
+.services .service-item .desc {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 16px;
   text-align: center;
-  opacity: 0;
-  transition: opacity .35s ease;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(10,10,10,0.0) 35%, rgba(10,10,10,0.82) 100%);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s ease;
+  z-index: 2;
+}
+.services .service-item .desc p {
+  margin: 0; font-size: 14px; line-height: 1.35; opacity: .95;
+  max-width: 90%;
 }
 
-.skill-overlay h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0 0 6px 0;
-  letter-spacing: 0.2px;
-}
-
-.skill-overlay p {
-  font-size: 0.92rem;
-  line-height: 1.35;
-  opacity: 0.95;
-  margin: 0;
-}
-
-/* Hover state */
-.skill-card:hover .skill-image img {
+/* Hover effects */
+.services .service-item:hover .icon img {
   transform: scale(1.08);
-  filter: brightness(55%) saturate(1.05);
+  filter: brightness(0.8) saturate(1.05);
 }
-.skill-card:hover .skill-overlay { opacity: 1; }
+.services .service-item:hover .desc {
+  opacity: 1; transform: translateY(0);
+}
 
-/* Optional: subtle raise on hover */
-.skill-card:hover { transform: translateY(-2px); }
-
-/* AOS compatibility (if using data-aos) */
-.skill-card[data-aos] { will-change: transform, opacity; }
+/* Optional lift on hover */
+@media (min-width: 1365px) {
+  .services .service-item:hover { transform: translateY(-3px); }
+}

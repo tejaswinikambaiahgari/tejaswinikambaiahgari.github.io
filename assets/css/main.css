@@ -1711,4 +1711,31 @@ section,
 @media (max-width: 575px) {
   .portfolio .portfolio-item img { height: 160px; }
 }
+/* --- PDF in GLightbox: desktop sizing --- */
+.glightbox-container,
+.glightbox-container .ginner-container {
+  max-width: 100vw !important;
+}
 
+.glightbox-clean .gslide-external .gslide-media,
+.glightbox-container .gslide-external .gslide-media {
+  width: 90vw !important;
+  height: 90vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}
+
+.glightbox-container .gslide-external iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* Slightly smaller on narrow screens (still used by some Androids) */
+@media (max-width: 992px) {
+  .glightbox-clean .gslide-external .gslide-media,
+  .glightbox-container .gslide-external .gslide-media {
+    width: 96vw !important;
+    height: 88vh !important;
+  }
+}

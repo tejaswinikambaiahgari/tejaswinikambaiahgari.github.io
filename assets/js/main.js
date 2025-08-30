@@ -249,3 +249,25 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+// Ensure GLightbox is initialized for images as usual (DevFolio does this)
+const pdfBox = GLightbox({
+  selector: 'a.pdf-link.glightbox', // only anchors that still have glightbox
+});
+
+// Mobile/iOS can't reliably render PDFs in iframes.
+// On small screens or iOS, open PDFs in a new tab instead of lightbox.
+(function () {
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const isSmall = window.matchMedia('(max-width: 768px)').matches;
+
+  if (isIOS || isSmall) {
+    document.querySelectorAll('a.pdf-link').forEach(a => {
+      a.classList.remove('glightbox');      // disable lightbox for PDFs on mobile
+      a.setAttribute('target', '_blank');   // open in new tab
+      a.setAttribute('rel', 'noopener');    // security
+      // Optional: add hint text for screen readers
+      if (!a.title) a.title = 'Open PDF in new tab';
+    });
+  }
+})();

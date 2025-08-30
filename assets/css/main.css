@@ -1693,3 +1693,22 @@ section,
 @media (min-width: 1365px) {
   .services .service-item:hover { transform: translateY(-3px); }
 }
+
+/* --- Uniform portfolio thumbnails --- */
+.portfolio .portfolio-item img {
+  width: 100%;
+  height: 220px;          /* set consistent height */
+  object-fit: cover;      /* crop image to fill without distortion */
+  object-position: center;
+  display: block;
+  border-radius: 6px;     /* optional: matches your card style */
+}
+
+@media (max-width: 991px) {
+  .portfolio .portfolio-item img { height: 200px; }
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-item img { height: 160px; }
+}
+

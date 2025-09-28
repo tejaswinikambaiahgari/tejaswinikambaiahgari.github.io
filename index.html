@@ -39,7 +39,6 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="assets/docs/Tejaswini_Kambaiahgari_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -92,16 +91,7 @@
     </section>
     <!-- /About Section -->
 
-    <!-- Resume Section (skeleton; fill later) -->
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-      </div>
-      <div class="container">
-        <!-- Optional: replace with your real resume details or an embedded PDF -->
-      </div>
-    </section>
-    <!-- /Resume Section -->
+
 
     <!-- Skills / Services Section -->
     <section id="skills" class="services section">
@@ -514,25 +504,5 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-<!-- Hidden lightbox link for Resume -->
-<a id="resume-lightbox" href="assets/docs/Tejaswini%20K%20Aug%2020%20%20CV.pdf" 
-   class="glightbox" data-type="iframe" style="display:none;"></a>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const resumeUrl = "assets/docs/Tejaswini%20K%20Aug%2020%20%20CV.pdf"; // update if renamed
-    const navResume = document.getElementById('nav-resume');
-
-    navResume.addEventListener('click', function (e) {
-      e.preventDefault();
-      try {
-        const lb = GLightbox({ elements: [{ href: resumeUrl, type: 'iframe' }] });
-        lb.open();
-      } catch (err) {
-        window.open(resumeUrl, '_blank', 'noopener');
-      }
-    });
-  });
-</script>
 </body>
 </html>

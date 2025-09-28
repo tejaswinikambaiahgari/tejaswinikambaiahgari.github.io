@@ -1765,3 +1765,350 @@ section,
     height: 88vh !important;
   }
 }
+
+/* === Custom Overrides === */
+
+/* 1. Typography & Scale */
+:root {
+  /* Set base font-size to 16px */
+  font-size: 16px;
+  
+  /* Spacing system variables */
+  --space-2: 0.5rem;   /* 8px */
+  --space-4: 1rem;     /* 16px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-24: 6rem;    /* 96px */
+  --space-32: 8rem;    /* 128px */
+  --space-48: 12rem;   /* 192px */
+}
+
+/* Enhanced typography with improved line-heights and weights */
+body {
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+/* Fluid typography for hero titles */
+.impact-hero .hero-title {
+  font-size: clamp(28px, 4vw, 56px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  color: #fff !important;
+  line-height: 1.1 !important;
+}
+
+.impact-hero .hero-sub {
+  font-size: clamp(16px, 2.2vw, 22px) !important;
+  opacity: .95 !important;
+  margin-top: var(--space-2) !important;
+  color: #fff !important;
+  line-height: 1.4 !important;
+}
+
+/* 2. Enhanced Impact Bubbles (moved from inline styles) */
+.impact-bubbles {
+  position: relative;
+  margin-top: var(--space-8);
+  display: grid;
+  place-items: center;
+  gap: var(--space-6);
+}
+
+.impact-bubbles .bubble {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.22);
+  text-decoration: none;
+  transform: translate(calc(var(--dx, 0) * 1vw), calc(var(--dy, 0) * 1vh));
+  animation: float 8s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  transition: transform .2s ease, background .2s ease;
+  will-change: transform;
+}
+
+.impact-bubbles .bubble:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translate(calc(var(--dx, 0) * 1vw), calc(var(--dy, 0) * 1vh)) scale(1.03);
+}
+
+.impact-bubbles .bubble:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+}
+
+.impact-bubbles .bubble img {
+  width: 42px; 
+  height: 42px; 
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.impact-bubbles .bubble span {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 600;
+  max-width: 260px;
+}
+
+@keyframes float { 
+  0%, 100% { translate: 0 0; } 
+  50% { translate: 0 -6px; } 
+}
+
+@media (max-width: 520px) {
+  .impact-bubbles { 
+    grid-template-columns: 1fr; 
+    gap: var(--space-4); 
+  }
+  .impact-bubbles .bubble { 
+    transform: none !important; 
+    animation: none; 
+    width: 100%; 
+    justify-content: flex-start; 
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .impact-bubbles .bubble {
+    animation: none;
+    transform: translate(0, 0) !important;
+  }
+  
+  .impact-bubbles .bubble:hover {
+    transform: scale(1.03) !important;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 3. Consistent Section Spacing */
+.section {
+  padding: var(--space-24) 0;
+}
+
+.section-title {
+  padding-bottom: var(--space-16);
+}
+
+.section-title h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* 4. Enhanced Cards & Images - Unified Styling */
+
+/* Skills/Services Cards - Photo-cover style with consistent border radius */
+.services .service-item {
+  position: relative !important;
+  padding: 0 !important;
+  height: 280px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12) !important;
+  transition: all 250ms ease !important;
+  will-change: transform, box-shadow !important;
+}
+
+.services .service-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18) !important;
+}
+
+.services .service-item .icon {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 18px !important;
+  background: none !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.services .service-item .icon img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Portfolio Items - Enhanced with consistent styling */
+.portfolio .portfolio-item {
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 250ms ease;
+  will-change: transform, box-shadow;
+}
+
+.portfolio .portfolio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Aspect ratio containers for portfolio images */
+.portfolio .portfolio-item .portfolio-image-wrapper::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.portfolio .portfolio-item .portfolio-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.portfolio .portfolio-item img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Portfolio info overlay improvements */
+.portfolio .portfolio-item .portfolio-info {
+  border-radius: 0 0 18px 18px;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 5. Enhanced Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.portfolio .portfolio-item a:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -2px;
+}
+
+/* 6. Performance Optimizations */
+.services .service-item,
+.portfolio .portfolio-item,
+.impact-bubbles .bubble {
+  contain: paint;
+}
+
+/* 7. Improved Color Contrast */
+.section-title p {
+  color: #666;
+  font-size: 16px;
+}
+
+.services .service-item .title {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  padding: var(--space-2) var(--space-4) !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+}
+
+.services .service-item .desc {
+  background: linear-gradient(180deg, rgba(0,0,0,0.0) 25%, rgba(0,0,0,0.9) 100%) !important;
+}
+
+.services .service-item .desc p {
+  color: #fff !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+}
+
+/* 8. Responsive Improvements */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+  
+  .section-title {
+    padding-bottom: var(--space-12);
+  }
+  
+  .services .service-item {
+    height: 240px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-12) 0;
+  }
+  
+  .services .service-item {
+    height: 200px !important;
+  }
+}
+
+/* 9. Additional Polish */
+.container {
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Loading lazy images performance */
+img[loading="lazy"] {
+  transition: opacity 0.3s ease;
+}
+
+/* END Custom Overrides */

@@ -26,6 +26,66 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Minimal inline CSS for the impact bubbles hero (you can move this into main.css later) -->
+  <style>
+    .impact-hero .hero-title {
+      font-size: clamp(28px, 4vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .impact-hero .hero-sub {
+      font-size: clamp(16px, 2.2vw, 22px);
+      opacity: .95;
+      margin-top: 6px;
+      color: #fff;
+    }
+    .impact-bubbles {
+      position: relative;
+      margin-top: 28px;
+      display: grid;
+      place-items: center;
+      gap: 18px;
+    }
+    .impact-bubbles .bubble {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.22);
+      text-decoration: none;
+      transform: translate(calc(var(--dx, 0) * 1vw), calc(var(--dy, 0) * 1vh));
+      animation: float 8s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .impact-bubbles .bubble:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translate(calc(var(--dx, 0) * 1vw), calc(var(--dy, 0) * 1vh)) scale(1.03);
+    }
+    .impact-bubbles .bubble img {
+      width: 42px; height: 42px; border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+    .impact-bubbles .bubble span {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 600;
+      max-width: 260px;
+    }
+    @keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+    @media (max-width: 520px) {
+      .impact-bubbles { grid-template-columns: 1fr; gap: 12px; }
+      .impact-bubbles .bubble { transform: none !important; animation: none; width: 100%; justify-content: flex-start; }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -39,8 +99,11 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
+          <!-- About section stays on page but is not in the nav per your request -->
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Work Samples</a></li>
+          <!-- NEW: Resume link in navbar, opens in a new tab -->
+          <li><a href="assets/docs/Tejaswini_Kambaiahgari_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -50,17 +113,43 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <!-- Hero Section (Impact-first with floating bubbles) -->
+    <section id="hero" class="hero section dark-background impact-hero">
+
       <img src="assets/img/hero-img.jpg" alt="Portrait of Tejaswini Kambaiahgari" data-aos="fade-in">
+
       <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>I'm Tejaswini K</h2>
-        <p><span class="typed" data-typed-items="Product Manager, Product Designer, Developer, Product Innovator, Entrepreneur"></span></p>
+        <h1 class="hero-title">Hi, I'm Tejaswini — I build things that move people.</h1>
+        <p class="hero-sub">Impact over noise. Problems → first principles → shipped.</p>
+
+        <!-- Floating Impact Bubbles -->
+        <div class="impact-bubbles">
+          <a class="bubble" href="#portfolio" style="--dx: 10; --dy: -4; --delay: 0s;">
+            <img src="assets/img/bubbles/mesa-program.jpg" alt="Mesa program impact">
+            <span>“Build-Your-Business” program → 80+ student ventures</span>
+          </a>
+          <a class="bubble" href="#skills" style="--dx: -6; --dy: 5; --delay: .1s;">
+            <img src="assets/img/bubbles/mentorship.jpg" alt="Mentorship">
+            <span>Mentored 100+ PMs to ship portfolio-ready work</span>
+          </a>
+          <a class="bubble" href="#portfolio" style="--dx: -12; --dy: -6; --delay: .2s;">
+            <img src="assets/img/bubbles/snowin.jpg" alt="SnoWin XR">
+            <span>XR snow-sports simulator: 0→1 prototype + live demos</span>
+          </a>
+          <a class="bubble" href="#skills" style="--dx: 8; --dy: 6; --delay: .3s;">
+            <img src="assets/img/bubbles/discovery.jpg" alt="Customer discovery">
+            <span>100+ interviews → ruthless problem selection</span>
+          </a>
+          <a class="bubble" href="#about" style="--dx: 0; --dy: 9; --delay: .4s;">
+            <img src="assets/img/bubbles/yoga.jpg" alt="Yoga meditation">
+            <span>Meditation & yoga → clear decisions, calm execution</span>
+          </a>
+        </div>
       </div>
     </section>
     <!-- /Hero Section -->
 
-    <!-- About Section -->
+    <!-- About Section (unchanged content) -->
     <section id="about" class="about section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
@@ -91,9 +180,7 @@
     </section>
     <!-- /About Section -->
 
-
-
-    <!-- Skills / Services Section -->
+    <!-- Skills / Services Section (unchanged content) -->
     <section id="skills" class="services section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
@@ -186,8 +273,6 @@
     </section>
     <!-- /Skills / Services Section -->
 
-  
-
    <!-- Portfolio Section -->
 <section id="portfolio" class="portfolio section">
   <div class="container section-title" data-aos="fade-up">
@@ -225,7 +310,7 @@
             <a href="assets/img/portfolio/baselinetech_product_devdoc/baselinetech_product_devdoc_p3_i1.png" class="glightbox" data-gallery="gallery-bt-devdoc" style="display:none"></a>
             <a href="assets/img/portfolio/baselinetech_product_devdoc/baselinetech_product_devdoc_p4_i1.png" class="glightbox" data-gallery="gallery-bt-devdoc" style="display:none"></a>
 
-            <!-- PDF (opens new tab) -->
+            <!-- PDF -->
             <a href="assets/docs/BaselineTech Product Development Doc- Generate.pdf"
                class="details-link" target="_blank" rel="noopener" title="Open PDF">
               <i class="bi bi-link-45deg"></i>
@@ -382,7 +467,7 @@
           </div>
         </div>
 
-        <!-- Optional contact form (works if you set up forms/contact.php) -->
+        <!-- Optional contact form -->
         <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
           <div class="row gy-4">
             <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>

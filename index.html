@@ -27,65 +27,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Minimal inline CSS for the impact bubbles hero (you can move this into main.css later) -->
-  <style>
-    .impact-hero .hero-title {
-      font-size: clamp(28px, 4vw, 56px);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-    .impact-hero .hero-sub {
-      font-size: clamp(16px, 2.2vw, 22px);
-      opacity: .95;
-      margin-top: 6px;
-      color: #fff;
-    }
-    .impact-bubbles {
-      position: relative;
-      margin-top: 28px;
-      display: grid;
-      place-items: center;
-      gap: 18px;
-    }
-    .impact-bubbles .bubble {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.10);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.22);
-      text-decoration: none;
-      transform: translate(calc(var(--dx, 0) * 1vw), calc(var(--dy, 0) * 1vh));
-      animation: float 8s ease-in-out infinite;
-      animation-delay: var(--delay, 0s);
-      transition: transform .2s ease, background .2s ease;
-    }
-    .impact-bubbles .bubble:hover {
-      background: rgba(255,255,255,0.18);
-      transform: translate(calc(var(--dx, 0) * 1vw), calc(var(--dy, 0) * 1vh)) scale(1.03);
-    }
-    .impact-bubbles .bubble img {
-      width: 42px; height: 42px; border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255,255,255,0.4);
-    }
-    .impact-bubbles .bubble span {
-      color: #fff;
-      font-size: 14px;
-      line-height: 1.2;
-      font-weight: 600;
-      max-width: 260px;
-    }
-    @keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -6px; } }
-    @media (max-width: 520px) {
-      .impact-bubbles { grid-template-columns: 1fr; gap: 12px; }
-      .impact-bubbles .bubble { transform: none !important; animation: none; width: 100%; justify-content: flex-start; }
-    }
-  </style>
 </head>
 
 <body class="index-page">
@@ -156,7 +97,7 @@
           <div class="col-md-6">
             <div class="row justify-content-between gy-4">
               <div class="col-lg-5">
-                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Photo of TJ">
+                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Photo of TJ" loading="lazy">
               </div>
               <div class="col-lg-7 about-info">
                 <p><strong>Name: </strong> <span>Tejaswini Kambaiahgari</span></p>
@@ -194,7 +135,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon">
-                <img src="assets/img/customer-discovery.jpg" alt="Customer Discovery">
+                <img src="assets/img/customer-discovery.jpg" alt="Customer Discovery" loading="lazy">
               </div>
               <div class="title">Customer Discovery</div>
               <div class="desc">
@@ -207,7 +148,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon">
-                <img src="assets/img/product-design.jpg" alt="Product Design">
+                <img src="assets/img/product-design.jpg" alt="Product Design" loading="lazy">
               </div>
               <div class="title">Product Design</div>
               <div class="desc">
@@ -220,7 +161,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon">
-                <img src="assets/img/cross-functional.jpg" alt="Cross-functional Leadership">
+                <img src="assets/img/cross-functional.jpg" alt="Cross-functional Leadership" loading="lazy">
               </div>
               <div class="title">Cross-functional Leadership</div>
               <div class="desc">
@@ -233,7 +174,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon">
-                <img src="assets/img/storytelling.jpg" alt="Storytelling & Communication">
+                <img src="assets/img/storytelling.jpg" alt="Storytelling & Communication" loading="lazy">
               </div>
               <div class="title">Storytelling & Communication</div>
               <div class="desc">
@@ -246,7 +187,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item position-relative">
               <div class="icon">
-                <img src="assets/img/ownership.jpg" alt="Entrepreneurial Ownership">
+                <img src="assets/img/ownership.jpg" alt="Entrepreneurial Ownership" loading="lazy">
               </div>
               <div class="title">Entrepreneurial Ownership</div>
               <div class="desc">
@@ -259,7 +200,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon">
-                <img src="assets/img/clarity.jpg" alt="Strategic Clarity">
+                <img src="assets/img/clarity.jpg" alt="Strategic Clarity" loading="lazy">
               </div>
               <div class="title">Strategic Clarity</div>
               <div class="desc">
@@ -296,7 +237,9 @@
 
         <!-- PRODUCTS: BaselineTech Product Development -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-products">
-          <img src="assets/img/portfolio/baselinetec-devdoc-thumb.jpg" class="img-fluid" alt="BaselineTech Product Development Doc">
+          <div class="portfolio-image-wrapper position-relative">
+            <img src="assets/img/portfolio/baselinetec-devdoc-thumb.jpg" class="img-fluid" alt="BaselineTech Product Development Doc" loading="lazy">
+          </div>
           <div class="portfolio-info">
             <h4>BaselineTech — Product Development</h4>
             <p>0→1 build: discovery, design, execution, cross-functional leadership.</p>
@@ -320,7 +263,9 @@
 
         <!-- REQUIREMENTS: BaselineTech PRD -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-requirements">
-          <img src="assets/img/portfolio/baselinetec-prd-thumb.jpg" class="img-fluid" alt="BaselineTech PRD">
+          <div class="portfolio-image-wrapper position-relative">
+            <img src="assets/img/portfolio/baselinetec-prd-thumb.jpg" class="img-fluid" alt="BaselineTech PRD" loading="lazy">
+          </div>
           <div class="portfolio-info">
             <h4>BaselineTech — PRD</h4>
             <p>Problem, goals, scope, acceptance criteria, milestones.</p>
@@ -339,7 +284,9 @@
 
         <!-- DESIGN: Hardware Design Review -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-          <img src="assets/img/portfolio/baselinetec-hw-thumb.jpg" class="img-fluid" alt="Hardware Design Review">
+          <div class="portfolio-image-wrapper position-relative">
+            <img src="assets/img/portfolio/baselinetec-hw-thumb.jpg" class="img-fluid" alt="Hardware Design Review" loading="lazy">
+          </div>
           <div class="portfolio-info">
             <h4>Hardware Design Review</h4>
             <p>Architecture, safety, mechanical/electrical trade-offs, milestones.</p>
@@ -362,7 +309,9 @@
 
         <!-- DESIGN: Game Design — Mirage -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-          <img src="assets/img/portfolio/mirage-thumb.jpg" class="img-fluid" alt="Game Design — Mirage">
+          <div class="portfolio-image-wrapper position-relative">
+            <img src="assets/img/portfolio/mirage-thumb.jpg" class="img-fluid" alt="Game Design — Mirage" loading="lazy">
+          </div>
           <div class="portfolio-info">
             <h4>Game Design — Mirage</h4>
             <p>Systems thinking, core loop, progression, player experience.</p>
@@ -385,7 +334,9 @@
 
         <!-- STRATEGY: SwiftSwipe -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-          <img src="assets/img/portfolio/swiftswipe-thumb.jpg" class="img-fluid" alt="SwiftSwipe Phone Wallet">
+          <div class="portfolio-image-wrapper position-relative">
+            <img src="assets/img/portfolio/swiftswipe-thumb.jpg" class="img-fluid" alt="SwiftSwipe Phone Wallet" loading="lazy">
+          </div>
           <div class="portfolio-info">
             <h4>SwiftSwipe — Product Strategy</h4>
             <p>Positioning, user pain points, concept pitch and go-to-market.</p>
@@ -404,7 +355,9 @@
 
         <!-- STRATEGY: ImmersivED -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-          <img src="assets/img/portfolio/immersived-thumb.jpg" class="img-fluid" alt="ImmersivED Executive Summary">
+          <div class="portfolio-image-wrapper position-relative">
+            <img src="assets/img/portfolio/immersived-thumb.jpg" class="img-fluid" alt="ImmersivED Executive Summary" loading="lazy">
+          </div>
           <div class="portfolio-info">
             <h4>ImmersivED — Executive Summary</h4>
             <p>XR in education: vision, inclusivity, adoption strategy.</p>

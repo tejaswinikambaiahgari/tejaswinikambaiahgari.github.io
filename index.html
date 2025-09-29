@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Tejaswini Kambaiahgari – Product Manager</title>
-  <meta name="description" content="Product Builder focused on impact: customer discovery, 0→1, and cross-functional execution.">
-  <meta name="keywords" content="Product Manager, Product Design, PRD, Strategy, XR, Customer Discovery, Roadmaps, LinkedIn APB">
+  <title>Tejaswini Kambaiahgari – Product Builder</title>
+
+  <meta name="description" content="Product builder with impact across discovery, design, engineering, and GTM. Clean, credible portfolio showcasing projects, skills, and story.">
+  <meta name="keywords" content="Product Manager, Product Builder, Product Design, User Research, PRD, Roadmap, XR, Strategy">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -15,18 +16,19 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS -->
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Site CSS -->
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <!-- Monochrome + components override -->
-  <link href="assets/css/portfolio-mono.css" rel="stylesheet">
+  <!-- Custom overrides for this design -->
+  <link href="assets/css/custom.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
@@ -44,7 +46,6 @@
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Work Samples</a></li>
-          <li><a href="assets/docs/Tejaswini_Kambaiahgari_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -54,324 +55,307 @@
 
   <main class="main">
 
-    <!-- HERO (Impact bubbles + central intro) -->
-    <section id="hero" class="hero section dark-background mono-veil">
-      <!-- Background image stays from your template -->
-      <img src="assets/img/hero-img.jpg" alt="Background" data-aos="fade-in">
+    <!-- HERO -->
+    <section id="hero" class="hero section hero-modern">
+      <img src="assets/img/hero-img.jpg" alt="Background" class="hero-bg" data-aos="fade-in">
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="50">
+        <h1 class="hero-title mb-2">I'm <span class="gradient-text">Tejaswini&nbsp;K</span></h1>
+        <p class="hero-sub mb-4">
+          <span class="typed" data-typed-items="Product Builder, Product Manager, Product Designer, Engineer, Entrepreneur"></span>
+        </p>
 
-      <div class="container position-relative">
-        <!-- Center intro -->
-        <div class="hero-center text-center" data-aos="fade-up" data-aos-delay="120">
-          <h2>I'm Tejaswini K</h2>
-          <p><span class="typed" data-typed-items="Product Manager, Product Designer, Engineer, Product Builder"></span></p>
-        </div>
-
-        <!-- Floating impact bubbles (text only, clean mono) -->
+        <!-- Impact Bubbles (gradient pills) -->
         <div class="impact-bubbles">
-          <div class="bubble" style="--r: 11rem; --d: 0s;" data-aos="zoom-in" data-aos-delay="150">
-            <span>Built XR snowsports simulator</span>
-          </div>
-          <div class="bubble" style="--r: 14rem; --d: .6s;" data-aos="zoom-in" data-aos-delay="250">
-            <span>80+ student ventures launched</span>
-          </div>
-          <div class="bubble" style="--r: 18rem; --d: 1.2s;" data-aos="zoom-in" data-aos-delay="350">
-            <span>100+ PMs mentored</span>
-          </div>
-          <div class="bubble" style="--r: 16rem; --d: 1.8s;" data-aos="zoom-in" data-aos-delay="450">
-            <span>Customer discovery expert</span>
-          </div>
-          <div class="bubble" style="--r: 20rem; --d: 2.4s;" data-aos="zoom-in" data-aos-delay="550">
-            <span>First-principles problem solver</span>
-          </div>
+          <span class="bubble">Built XR snow-sports simulator</span>
+          <span class="bubble">80+ student ventures launched</span>
+          <span class="bubble">100+ PMs mentored</span>
+          <span class="bubble">Customer discovery expert</span>
+          <span class="bubble">First-principles problem solver</span>
         </div>
       </div>
     </section>
-    <!-- /HERO -->
 
     <!-- ABOUT -->
     <section id="about" class="about section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container" data-aos="fade-up">
         <div class="row gy-5 align-items-center">
           <div class="col-lg-5">
-            <div class="about-card glass">
-              <img src="assets/img/profile-img.jpg" class="img-fluid w-100 mono-img" alt="Tejaswini portrait">
+            <div class="about-card">
+              <img src="assets/img/profile-img.jpg" class="img-fluid rounded-4 shadow-sm" alt="Tejaswini">
             </div>
           </div>
           <div class="col-lg-7">
-            <div class="about-copy">
-              <h2 class="ink mb-3">About me</h2>
-              <p class="lead subtle">
-                I’m someone who’s always hunting for the root cause.
-                First principles first, then build bold solutions for the highest-leverage problems.
-              </p>
-              <p>
-                In the lab and in the wild, I blend discovery with execution:
-                XR prototypes, PRDs, roadmaps, and crisp comms that move teams forward.
-                Meditation & yoga keep me present so I can listen deeply—to users, signals, and results.
-              </p>
-              <ul class="about-bullets">
-                <li><i class="bi bi-target"></i> Evidence-driven: 100+ interviews to insights</li>
-                <li><i class="bi bi-cpu"></i> Technical enough to ship 0→1</li>
-                <li><i class="bi bi-people"></i> Aligned stakeholders → measurable outcomes</li>
-              </ul>
+            <h2 class="section-heading mb-3">About Me</h2>
+            <p class="lead">
+              I’m a product builder who’s always hunting for real problems. I get to root causes with first principles, then go wide on solutions—and do whatever it takes to fix the one that matters most.
+            </p>
+            <p>
+              From building a mixed-reality snowboarding simulator to designing programs that helped launch 80+ student businesses, I bridge discovery, design, engineering, and go-to-market to ship outcomes. Meditation and yoga keep me centered so I can stay relentless, clear, and kind in the work.
+            </p>
+            <div class="about-meta">
+              <div><i class="bi bi-geo-alt"></i> Boston, MA</div>
+              <div><i class="bi bi-envelope"></i> kambaiahgari.t@northeastern.edu</div>
+              <div><i class="bi bi-phone"></i> (842) 342-5976</div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- /ABOUT -->
 
     <!-- SKILLS (Carousel) -->
-    <section id="skills" class="services section">
+    <section id="skills" class="section skills-modern">
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p class="subtle">Strategy + Design + Execution — in one steady loop.</p>
+        <p>Sharp where it matters—discovery, design, clarity, and leadership.</p>
       </div>
 
-      <div class="container skills-carousel" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper init-swiper glass">
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+        <div class="swiper init-swiper skills-swiper">
           <script type="application/json" class="swiper-config">
             {
+              "slidesPerView": 1,
+              "spaceBetween": 24,
               "loop": false,
-              "speed": 600,
-              "spaceBetween": 18,
-              "slidesPerView": 1.1,
               "breakpoints": {
-                "576": { "slidesPerView": 1.4 },
-                "768": { "slidesPerView": 2.2 },
+                "576": { "slidesPerView": 1.2 },
+                "768": { "slidesPerView": 2 },
                 "992": { "slidesPerView": 3 },
-                "1200": { "slidesPerView": 3.5 }
+                "1200": { "slidesPerView": 3 }
               },
               "navigation": { "nextEl": ".skills-next", "prevEl": ".skills-prev" },
-              "pagination": { "el": ".skills-dots", "clickable": true }
+              "pagination": { "el": ".skills-pagination", "clickable": true }
             }
           </script>
 
           <div class="swiper-wrapper">
-            <!-- Customer Discovery -->
+
+            <!-- Skill Card -->
             <div class="swiper-slide">
-              <article class="skill-card glass">
+              <div class="skill-card">
                 <div class="skill-media">
                   <img src="assets/img/customer-discovery.jpg" alt="Customer Discovery">
-                  <div class="skill-sheen"></div>
+                  <div class="overlay">
+                    <p>100+ interviews → insights → prototypes for XR & education products.</p>
+                  </div>
                 </div>
-                <div class="skill-title ink">Customer Discovery</div>
-                <div class="skill-desc">
-                  <p>100+ interviews → insights → prototypes. Evidence before opinion.</p>
-                </div>
-              </article>
+                <h3>Customer Discovery</h3>
+              </div>
             </div>
 
-            <!-- Product Design -->
             <div class="swiper-slide">
-              <article class="skill-card glass">
+              <div class="skill-card">
                 <div class="skill-media">
                   <img src="assets/img/product-design.jpg" alt="Product Design">
-                  <div class="skill-sheen"></div>
+                  <div class="overlay">
+                    <p>Turn ideas into MVPs — Figma, VR/IoT UX, rapid prototyping to live demos.</p>
+                  </div>
                 </div>
-                <div class="skill-title ink">Product Design</div>
-                <div class="skill-desc">
-                  <p>Idea → MVP: flows, XR/IoT UX, rapid prototyping to demos.</p>
-                </div>
-              </article>
+                <h3>Product Design</h3>
+              </div>
             </div>
 
-            <!-- Cross-functional Leadership -->
             <div class="swiper-slide">
-              <article class="skill-card glass">
+              <div class="skill-card">
                 <div class="skill-media">
                   <img src="assets/img/cross-functional.jpg" alt="Cross-functional Leadership">
-                  <div class="skill-sheen"></div>
+                  <div class="overlay">
+                    <p>Align eng, design & business to deliver 0→1 outcomes fast.</p>
+                  </div>
                 </div>
-                <div class="skill-title ink">Cross-functional Leadership</div>
-                <div class="skill-desc">
-                  <p>Align eng + design + GTM on outcomes, not output.</p>
-                </div>
-              </article>
+                <h3>Cross-functional Leadership</h3>
+              </div>
             </div>
 
-            <!-- Storytelling & Communication -->
             <div class="swiper-slide">
-              <article class="skill-card glass">
+              <div class="skill-card">
                 <div class="skill-media">
                   <img src="assets/img/storytelling.jpg" alt="Storytelling & Communication">
-                  <div class="skill-sheen"></div>
+                  <div class="overlay">
+                    <p>Pitches, PRDs, and updates that keep stakeholders inspired & aligned.</p>
+                  </div>
                 </div>
-                <div class="skill-title ink">Storytelling & Communication</div>
-                <div class="skill-desc">
-                  <p>Make complex simple. Pitches, PRDs, and status that move decisions.</p>
-                </div>
-              </article>
+                <h3>Storytelling & Communication</h3>
+              </div>
             </div>
 
-            <!-- Entrepreneurial Ownership -->
             <div class="swiper-slide">
-              <article class="skill-card glass">
+              <div class="skill-card">
                 <div class="skill-media">
                   <img src="assets/img/ownership.jpg" alt="Entrepreneurial Ownership">
-                  <div class="skill-sheen"></div>
+                  <div class="overlay">
+                    <p>0→1 builder: BaselineTech & Mesa—vision, funding, real-world pilots.</p>
+                  </div>
                 </div>
-                <div class="skill-title ink">Entrepreneurial Ownership</div>
-                <div class="skill-desc">
-                  <p>0→1 builder: scope, resources, delivery—no handoffs dropped.</p>
-                </div>
-              </article>
+                <h3>Entrepreneurial Ownership</h3>
+              </div>
             </div>
 
-            <!-- Strategic Clarity -->
             <div class="swiper-slide">
-              <article class="skill-card glass">
+              <div class="skill-card">
                 <div class="skill-media">
                   <img src="assets/img/clarity.jpg" alt="Strategic Clarity">
-                  <div class="skill-sheen"></div>
+                  <div class="overlay">
+                    <p>Make complexity actionable: roadmaps, KPIs, and tradeoff decisions.</p>
+                  </div>
                 </div>
-                <div class="skill-title ink">Strategic Clarity</div>
-                <div class="skill-desc">
-                  <p>Roadmaps, KPIs, and crisp tradeoffs—focus on the essential.</p>
-                </div>
-              </article>
+                <h3>Strategic Clarity</h3>
+              </div>
             </div>
           </div>
 
-          <div class="skills-prev swiper-button-prev"></div>
-          <div class="skills-next swiper-button-next"></div>
-          <div class="skills-dots swiper-pagination"></div>
+          <div class="skills-controls d-flex align-items-center justify-content-between mt-3">
+            <div class="skills-prev btn-nav"><i class="bi bi-arrow-left"></i></div>
+            <div class="skills-pagination"></div>
+            <div class="skills-next btn-nav"><i class="bi bi-arrow-right"></i></div>
+          </div>
         </div>
       </div>
     </section>
-    <!-- /SKILLS -->
 
-    <!-- WORK SAMPLES (Carousel, NO zoom gallery) -->
-    <section id="portfolio" class="portfolio section">
+    <!-- WORK SAMPLES (Carousel) -->
+    <section id="portfolio" class="section work-modern">
       <div class="container section-title" data-aos="fade-up">
         <h2>Work Samples</h2>
-        <p class="subtle">Fluency across product, design, engineering, and strategy—with AI tools in the loop.</p>
+        <p>Fluency across discovery, design, engineering, and PM craft.</p>
       </div>
 
-      <div class="container ws-carousel" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper init-swiper glass">
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+        <div class="swiper init-swiper work-swiper">
           <script type="application/json" class="swiper-config">
             {
+              "slidesPerView": 1,
+              "spaceBetween": 24,
               "loop": false,
-              "speed": 600,
-              "spaceBetween": 18,
-              "slidesPerView": 1.05,
               "breakpoints": {
-                "576": { "slidesPerView": 1.3 },
+                "576": { "slidesPerView": 1.2 },
                 "768": { "slidesPerView": 2 },
-                "992": { "slidesPerView": 2.6 },
-                "1200": { "slidesPerView": 3.2 }
+                "1200": { "slidesPerView": 3 }
               },
-              "navigation": { "nextEl": ".ws-next", "prevEl": ".ws-prev" },
-              "pagination": { "el": ".ws-dots", "clickable": true }
+              "navigation": { "nextEl": ".work-next", "prevEl": ".work-prev" },
+              "pagination": { "el": ".work-pagination", "clickable": true }
             }
           </script>
 
           <div class="swiper-wrapper">
-            <!-- BaselineTech — Product Development -->
+
+            <!-- Product Development -->
             <div class="swiper-slide">
-              <article class="ws-card glass">
-                <div class="thumb">
+              <article class="work-card">
+                <div class="work-media">
                   <img src="assets/img/portfolio/baselinetec-devdoc-thumb.jpg" alt="BaselineTech — Product Development">
                 </div>
-                <div class="meta">
-                  <h4 class="ink">BaselineTech — Product Development</h4>
+                <div class="work-body">
+                  <h3>BaselineTech — Product Development</h3>
                   <p>0→1 build: discovery, design, execution, cross-functional leadership.</p>
                 </div>
-                <div class="ws-actions">
-                  <a class="btn-ghost" href="assets/docs/BaselineTech Product Development Doc- Generate.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                <div class="work-actions">
+                  <a class="btn-outline" href="assets/docs/BaselineTech Product Development Doc- Generate.pdf" target="_blank" rel="noopener">
+                    <i class="bi bi-file-earmark-text"></i> View PDF
+                  </a>
                 </div>
               </article>
             </div>
 
-            <!-- BaselineTech — PRD -->
+            <!-- PRD -->
             <div class="swiper-slide">
-              <article class="ws-card glass">
-                <div class="thumb">
+              <article class="work-card">
+                <div class="work-media">
                   <img src="assets/img/portfolio/baselinetec-prd-thumb.jpg" alt="BaselineTech — PRD">
                 </div>
-                <div class="meta">
-                  <h4 class="ink">BaselineTech — PRD</h4>
+                <div class="work-body">
+                  <h3>BaselineTech — PRD</h3>
                   <p>Problem, goals, scope, acceptance criteria, milestones.</p>
                 </div>
-                <div class="ws-actions">
-                  <a class="btn-ghost" href="assets/docs/BaselineTech PRD .pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                <div class="work-actions">
+                  <a class="btn-outline" href="assets/docs/BaselineTech PRD .pdf" target="_blank" rel="noopener">
+                    <i class="bi bi-file-earmark-text"></i> View PDF
+                  </a>
                 </div>
               </article>
             </div>
 
             <!-- Hardware Design Review -->
             <div class="swiper-slide">
-              <article class="ws-card glass">
-                <div class="thumb">
+              <article class="work-card">
+                <div class="work-media">
                   <img src="assets/img/portfolio/baselinetec-hw-thumb.jpg" alt="Hardware Design Review">
                 </div>
-                <div class="meta">
-                  <h4 class="ink">Hardware Design Review</h4>
+                <div class="work-body">
+                  <h3>Hardware Design Review</h3>
                   <p>Architecture, safety, mechanical/electrical trade-offs, milestones.</p>
                 </div>
-                <div class="ws-actions">
-                  <a class="btn-ghost" href="assets/docs/BaselineTech Hardware Design Review.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                <div class="work-actions">
+                  <a class="btn-outline" href="assets/docs/BaselineTech Hardware Design Review.pdf" target="_blank" rel="noopener">
+                    <i class="bi bi-file-earmark-text"></i> View PDF
+                  </a>
                 </div>
               </article>
             </div>
 
             <!-- Game Design — Mirage -->
             <div class="swiper-slide">
-              <article class="ws-card glass">
-                <div class="thumb">
+              <article class="work-card">
+                <div class="work-media">
                   <img src="assets/img/portfolio/mirage-thumb.jpg" alt="Game Design — Mirage">
                 </div>
-                <div class="meta">
-                  <h4 class="ink">Game Design — Mirage</h4>
+                <div class="work-body">
+                  <h3>Game Design — Mirage</h3>
                   <p>Systems thinking, core loop, progression, player experience.</p>
                 </div>
-                <div class="ws-actions">
-                  <a class="btn-ghost" href="assets/docs/Game Design -Mirage.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                <div class="work-actions">
+                  <a class="btn-outline" href="assets/docs/Game Design -Mirage.pdf" target="_blank" rel="noopener">
+                    <i class="bi bi-file-earmark-text"></i> View PDF
+                  </a>
                 </div>
               </article>
             </div>
 
-            <!-- SwiftSwipe -->
+            <!-- SwiftSwipe — Strategy -->
             <div class="swiper-slide">
-              <article class="ws-card glass">
-                <div class="thumb">
+              <article class="work-card">
+                <div class="work-media">
                   <img src="assets/img/portfolio/swiftswipe-thumb.jpg" alt="SwiftSwipe — Product Strategy">
                 </div>
-                <div class="meta">
-                  <h4 class="ink">SwiftSwipe — Product Strategy</h4>
-                  <p>Positioning, user pain points, concept pitch and go-to-market.</p>
+                <div class="work-body">
+                  <h3>SwiftSwipe — Product Strategy</h3>
+                  <p>Positioning, user pain points, concept pitch & go-to-market.</p>
                 </div>
-                <div class="ws-actions">
-                  <a class="btn-ghost" href="assets/docs/Swift swipe phone wallet product presentation.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                <div class="work-actions">
+                  <a class="btn-outline" href="assets/docs/Swift swipe phone wallet product presentation.pdf" target="_blank" rel="noopener">
+                    <i class="bi bi-file-earmark-text"></i> View PDF
+                  </a>
                 </div>
               </article>
             </div>
 
-            <!-- ImmersivED -->
+            <!-- ImmersivED — Executive Summary -->
             <div class="swiper-slide">
-              <article class="ws-card glass">
-                <div class="thumb">
+              <article class="work-card">
+                <div class="work-media">
                   <img src="assets/img/portfolio/immersived-thumb.jpg" alt="ImmersivED — Executive Summary">
                 </div>
-                <div class="meta">
-                  <h4 class="ink">ImmersivED — Executive Summary</h4>
+                <div class="work-body">
+                  <h3>ImmersivED — Executive Summary</h3>
                   <p>XR in education: vision, inclusivity, adoption strategy.</p>
                 </div>
-                <div class="ws-actions">
-                  <a class="btn-ghost" href="assets/docs/Executive Summary Final.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                <div class="work-actions">
+                  <a class="btn-outline" href="assets/docs/Executive Summary Final.pdf" target="_blank" rel="noopener">
+                    <i class="bi bi-file-earmark-text"></i> View PDF
+                  </a>
                 </div>
               </article>
             </div>
+
           </div>
 
-          <div class="ws-prev swiper-button-prev"></div>
-          <div class="ws-next swiper-button-next"></div>
-          <div class="ws-dots swiper-pagination"></div>
+          <div class="work-controls d-flex align-items-center justify-content-between mt-3">
+            <div class="work-prev btn-nav"><i class="bi bi-arrow-left"></i></div>
+            <div class="work-pagination"></div>
+            <div class="work-next btn-nav"><i class="bi bi-arrow-right"></i></div>
+          </div>
         </div>
       </div>
     </section>
-    <!-- /WORK SAMPLES -->
 
     <!-- CONTACT -->
     <section id="contact" class="contact section">
@@ -380,47 +364,45 @@
         <p>Let’s build something users love.</p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="info-wrap glass" data-aos="fade-up" data-aos-delay="200">
-          <div class="row gy-5">
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Location</h3>
-                  <p>Boston, MA</p>
-                </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <div class="info-item">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <h3>Location</h3>
+                <p>Boston, MA</p>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call</h3>
-                  <p>(842) 342-5976</p>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-item">
+              <i class="bi bi-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>kambaiahgari.t@northeastern.edu</p>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p>kambaiahgari.t@northeastern.edu</p>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-item">
+              <i class="bi bi-phone"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>(842) 342-5976</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Optional contact form (works if forms/contact.php is configured) -->
-        <form action="forms/contact.php" method="post" class="php-email-form glass" data-aos="fade-up" data-aos-delay="300">
-          <div class="row gy-4">
+        <!-- Optional form (works with forms/contact.php if configured) -->
+        <form action="forms/contact.php" method="post" class="php-email-form mt-4">
+          <div class="row gy-3">
             <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
             <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Your Email" required></div>
-            <div class="col-md-12"><input type="text" class="form-control" name="subject" placeholder="Subject" required></div>
-            <div class="col-md-12"><textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea></div>
-            <div class="col-md-12 text-center">
+            <div class="col-12"><input type="text" class="form-control" name="subject" placeholder="Subject" required></div>
+            <div class="col-12"><textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea></div>
+            <div class="col-12 text-center">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
@@ -428,43 +410,47 @@
             </div>
           </div>
         </form>
+
       </div>
     </section>
-    <!-- /CONTACT -->
-
   </main>
 
-  <!-- Footer -->
-  <footer id="footer" class="footer accent-background">
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Tejaswini K</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
         <a href="#"><i class="bi bi-linkedin"></i></a>
       </div>
-      <div class="credits">Designed by <a href="#">Tejaswini</a></div>
     </div>
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS -->
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS -->
+  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

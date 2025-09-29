@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Tejaswini Kambaiahgari – Product Manager</title>
-  <meta name="description" content="Product Innovator experienced in software and product development, with a key role in designing and managing a Startup Leadership program. Proven ability to drive innovation and strategic growth. Passionate about building customer-centric products.">
-  <meta name="keywords" content="Product Manager, Product Design, User Research, Go-to-Market Strategy, Northeastern University, Agile, PRD, Roadmaps, Stakeholders">
+  <meta name="description" content="Product Builder focused on impact: customer discovery, 0→1, and cross-functional execution.">
+  <meta name="keywords" content="Product Manager, Product Design, PRD, Strategy, XR, Customer Discovery, Roadmaps, LinkedIn APB">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -17,20 +17,21 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- Site CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
-
+  <!-- Monochrome + components override -->
+  <link href="assets/css/portfolio-mono.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
 
+  <!-- Header -->
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
@@ -40,10 +41,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <!-- About section stays on page but is not in the nav per your request -->
+          <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Work Samples</a></li>
-          <!-- NEW: Resume link in navbar, opens in a new tab -->
           <li><a href="assets/docs/Tejaswini_Kambaiahgari_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -54,333 +54,326 @@
 
   <main class="main">
 
-    <!-- Hero Section (Impact-first with floating bubbles) -->
-    <section id="hero" class="hero section dark-background impact-hero">
+    <!-- HERO (Impact bubbles + central intro) -->
+    <section id="hero" class="hero section dark-background mono-veil">
+      <!-- Background image stays from your template -->
+      <img src="assets/img/hero-img.jpg" alt="Background" data-aos="fade-in">
 
-      <img src="assets/img/hero-img.jpg" alt="Portrait of Tejaswini Kambaiahgari" data-aos="fade-in">
+      <div class="container position-relative">
+        <!-- Center intro -->
+        <div class="hero-center text-center" data-aos="fade-up" data-aos-delay="120">
+          <h2>I'm Tejaswini K</h2>
+          <p><span class="typed" data-typed-items="Product Manager, Product Designer, Engineer, Product Builder"></span></p>
+        </div>
 
-      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-        <h1 class="hero-title">Hi, I'm Tejaswini — I build things that move people.</h1>
-        <p class="hero-sub">Impact over noise. Problems → first principles → shipped.</p>
-
-        <!-- Floating Impact Bubbles -->
+        <!-- Floating impact bubbles (text only, clean mono) -->
         <div class="impact-bubbles">
-          <a class="bubble" href="#portfolio" style="--dx: 10; --dy: -4; --delay: 0s;">
-            <img src="assets/img/bubbles/mesa-program.jpg" alt="Mesa program impact">
-            <span>“Build-Your-Business” program → 80+ student ventures</span>
-          </a>
-          <a class="bubble" href="#skills" style="--dx: -6; --dy: 5; --delay: .1s;">
-            <img src="assets/img/bubbles/mentorship.jpg" alt="Mentorship">
-            <span>Mentored 100+ PMs to ship portfolio-ready work</span>
-          </a>
-          <a class="bubble" href="#portfolio" style="--dx: -12; --dy: -6; --delay: .2s;">
-            <img src="assets/img/bubbles/snowin.jpg" alt="SnoWin XR">
-            <span>XR snow-sports simulator: 0→1 prototype + live demos</span>
-          </a>
-          <a class="bubble" href="#skills" style="--dx: 8; --dy: 6; --delay: .3s;">
-            <img src="assets/img/bubbles/discovery.jpg" alt="Customer discovery">
-            <span>100+ interviews → ruthless problem selection</span>
-          </a>
-          <a class="bubble" href="#about" style="--dx: 0; --dy: 9; --delay: .4s;">
-            <img src="assets/img/bubbles/yoga.jpg" alt="Yoga meditation">
-            <span>Meditation & yoga → clear decisions, calm execution</span>
-          </a>
+          <div class="bubble" style="--r: 11rem; --d: 0s;" data-aos="zoom-in" data-aos-delay="150">
+            <span>Built XR snowsports simulator</span>
+          </div>
+          <div class="bubble" style="--r: 14rem; --d: .6s;" data-aos="zoom-in" data-aos-delay="250">
+            <span>80+ student ventures launched</span>
+          </div>
+          <div class="bubble" style="--r: 18rem; --d: 1.2s;" data-aos="zoom-in" data-aos-delay="350">
+            <span>100+ PMs mentored</span>
+          </div>
+          <div class="bubble" style="--r: 16rem; --d: 1.8s;" data-aos="zoom-in" data-aos-delay="450">
+            <span>Customer discovery expert</span>
+          </div>
+          <div class="bubble" style="--r: 20rem; --d: 2.4s;" data-aos="zoom-in" data-aos-delay="550">
+            <span>First-principles problem solver</span>
+          </div>
         </div>
       </div>
     </section>
-    <!-- /Hero Section -->
+    <!-- /HERO -->
 
-    <!-- About Section (unchanged content) -->
+    <!-- ABOUT -->
     <section id="about" class="about section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-md-6">
-            <div class="row justify-content-between gy-4">
-              <div class="col-lg-5">
-                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Photo of TJ" loading="lazy">
-              </div>
-              <div class="col-lg-7 about-info">
-                <p><strong>Name: </strong> <span>Tejaswini Kambaiahgari</span></p>
-                <p><strong>Role: </strong> <span>Product Manager</span></p>
-                <p><strong>Email: </strong> <span>kambaiahgari.t@northeastern.edu</span></p>
-                <p><strong>Phone: </strong> <span>(842) 342-5976</span></p>
-              </div>
+        <div class="row gy-5 align-items-center">
+          <div class="col-lg-5">
+            <div class="about-card glass">
+              <img src="assets/img/profile-img.jpg" class="img-fluid w-100 mono-img" alt="Tejaswini portrait">
             </div>
           </div>
-
-          <div class="col-md-6">
-            <div class="about-me">
-              <h4>About me</h4>
-              <p>Product Manager passionate about turning user pain points into intuitive XR experiences.</p>
-              <p>At Northeastern’s Sherman Center, I led development of SnoWin, a mixed-reality snowboarding simulator, conducting 100+ user interviews to refine UX and analytics.</p>
-              <p>With a background in engineering and venture operations, I bridge technical execution and go-to-market strategy to build impactful products.</p>
+          <div class="col-lg-7">
+            <div class="about-copy">
+              <h2 class="ink mb-3">About me</h2>
+              <p class="lead subtle">
+                I’m someone who’s always hunting for the root cause.
+                First principles first, then build bold solutions for the highest-leverage problems.
+              </p>
+              <p>
+                In the lab and in the wild, I blend discovery with execution:
+                XR prototypes, PRDs, roadmaps, and crisp comms that move teams forward.
+                Meditation & yoga keep me present so I can listen deeply—to users, signals, and results.
+              </p>
+              <ul class="about-bullets">
+                <li><i class="bi bi-target"></i> Evidence-driven: 100+ interviews to insights</li>
+                <li><i class="bi bi-cpu"></i> Technical enough to ship 0→1</li>
+                <li><i class="bi bi-people"></i> Aligned stakeholders → measurable outcomes</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- /About Section -->
+    <!-- /ABOUT -->
 
-    <!-- Skills / Services Section (unchanged content) -->
+    <!-- SKILLS (Carousel) -->
     <section id="skills" class="services section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p>Blending strategy, design, and execution to deliver user-centered products.</p>
+        <p class="subtle">Strategy + Design + Execution — in one steady loop.</p>
       </div>
 
-      <div class="container">
-        <div class="row gy-4">
+      <div class="container skills-carousel" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper glass">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": false,
+              "speed": 600,
+              "spaceBetween": 18,
+              "slidesPerView": 1.1,
+              "breakpoints": {
+                "576": { "slidesPerView": 1.4 },
+                "768": { "slidesPerView": 2.2 },
+                "992": { "slidesPerView": 3 },
+                "1200": { "slidesPerView": 3.5 }
+              },
+              "navigation": { "nextEl": ".skills-next", "prevEl": ".skills-prev" },
+              "pagination": { "el": ".skills-dots", "clickable": true }
+            }
+          </script>
 
-          <!-- 1: Customer Discovery -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/customer-discovery.jpg" alt="Customer Discovery" loading="lazy">
-              </div>
-              <div class="title">Customer Discovery</div>
-              <div class="desc">
-                <p>100+ interviews → insights → prototypes for XR & education products.</p>
-              </div>
+          <div class="swiper-wrapper">
+            <!-- Customer Discovery -->
+            <div class="swiper-slide">
+              <article class="skill-card glass">
+                <div class="skill-media">
+                  <img src="assets/img/customer-discovery.jpg" alt="Customer Discovery">
+                  <div class="skill-sheen"></div>
+                </div>
+                <div class="skill-title ink">Customer Discovery</div>
+                <div class="skill-desc">
+                  <p>100+ interviews → insights → prototypes. Evidence before opinion.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Product Design -->
+            <div class="swiper-slide">
+              <article class="skill-card glass">
+                <div class="skill-media">
+                  <img src="assets/img/product-design.jpg" alt="Product Design">
+                  <div class="skill-sheen"></div>
+                </div>
+                <div class="skill-title ink">Product Design</div>
+                <div class="skill-desc">
+                  <p>Idea → MVP: flows, XR/IoT UX, rapid prototyping to demos.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Cross-functional Leadership -->
+            <div class="swiper-slide">
+              <article class="skill-card glass">
+                <div class="skill-media">
+                  <img src="assets/img/cross-functional.jpg" alt="Cross-functional Leadership">
+                  <div class="skill-sheen"></div>
+                </div>
+                <div class="skill-title ink">Cross-functional Leadership</div>
+                <div class="skill-desc">
+                  <p>Align eng + design + GTM on outcomes, not output.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Storytelling & Communication -->
+            <div class="swiper-slide">
+              <article class="skill-card glass">
+                <div class="skill-media">
+                  <img src="assets/img/storytelling.jpg" alt="Storytelling & Communication">
+                  <div class="skill-sheen"></div>
+                </div>
+                <div class="skill-title ink">Storytelling & Communication</div>
+                <div class="skill-desc">
+                  <p>Make complex simple. Pitches, PRDs, and status that move decisions.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Entrepreneurial Ownership -->
+            <div class="swiper-slide">
+              <article class="skill-card glass">
+                <div class="skill-media">
+                  <img src="assets/img/ownership.jpg" alt="Entrepreneurial Ownership">
+                  <div class="skill-sheen"></div>
+                </div>
+                <div class="skill-title ink">Entrepreneurial Ownership</div>
+                <div class="skill-desc">
+                  <p>0→1 builder: scope, resources, delivery—no handoffs dropped.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Strategic Clarity -->
+            <div class="swiper-slide">
+              <article class="skill-card glass">
+                <div class="skill-media">
+                  <img src="assets/img/clarity.jpg" alt="Strategic Clarity">
+                  <div class="skill-sheen"></div>
+                </div>
+                <div class="skill-title ink">Strategic Clarity</div>
+                <div class="skill-desc">
+                  <p>Roadmaps, KPIs, and crisp tradeoffs—focus on the essential.</p>
+                </div>
+              </article>
             </div>
           </div>
 
-          <!-- 2: Product Design -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/product-design.jpg" alt="Product Design" loading="lazy">
-              </div>
-              <div class="title">Product Design</div>
-              <div class="desc">
-                <p>Turning ideas into tangible MVPs — Figma, VR/IoT UX, rapid prototyping to live demos.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3: Cross-functional Leadership -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/cross-functional.jpg" alt="Cross-functional Leadership" loading="lazy">
-              </div>
-              <div class="title">Cross-functional Leadership</div>
-              <div class="desc">
-                <p>Align eng, design, and business to ship 0→1 outcomes fast.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4: Storytelling & Communication -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/storytelling.jpg" alt="Storytelling & Communication" loading="lazy">
-              </div>
-              <div class="title">Storytelling & Communication</div>
-              <div class="desc">
-                <p>Award-winning pitches + crisp PRDs and updates that keep stakeholders aligned.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5: Entrepreneurial Ownership -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/ownership.jpg" alt="Entrepreneurial Ownership" loading="lazy">
-              </div>
-              <div class="title">Entrepreneurial Ownership</div>
-              <div class="desc">
-                <p>0→1 builder: BaselineTech & Mesa — vision, funding, and real-world pilots.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6: Strategic Clarity -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/clarity.jpg" alt="Strategic Clarity" loading="lazy">
-              </div>
-              <div class="title">Strategic Clarity</div>
-              <div class="desc">
-                <p>Make complexity actionable: roadmaps, KPIs, and clear tradeoff decisions.</p>
-              </div>
-            </div>
-          </div>
-
+          <div class="skills-prev swiper-button-prev"></div>
+          <div class="skills-next swiper-button-next"></div>
+          <div class="skills-dots swiper-pagination"></div>
         </div>
       </div>
     </section>
-    <!-- /Skills / Services Section -->
+    <!-- /SKILLS -->
 
-   <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Work Samples</h2>
-    <p>Selected artifacts across product development, requirements, design, and strategy.</p>
-  </div>
+    <!-- WORK SAMPLES (Carousel, NO zoom gallery) -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Work Samples</h2>
+        <p class="subtle">Fluency across product, design, engineering, and strategy—with AI tools in the loop.</p>
+      </div>
 
-  <div class="container">
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+      <div class="container ws-carousel" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper glass">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": false,
+              "speed": 600,
+              "spaceBetween": 18,
+              "slidesPerView": 1.05,
+              "breakpoints": {
+                "576": { "slidesPerView": 1.3 },
+                "768": { "slidesPerView": 2 },
+                "992": { "slidesPerView": 2.6 },
+                "1200": { "slidesPerView": 3.2 }
+              },
+              "navigation": { "nextEl": ".ws-next", "prevEl": ".ws-prev" },
+              "pagination": { "el": ".ws-dots", "clickable": true }
+            }
+          </script>
 
-      <!-- Filters -->
-      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-        <li data-filter="*" class="filter-active">All</li>
-        <li data-filter=".filter-products">Products</li>
-        <li data-filter=".filter-requirements">Engineering</li>
-        <li data-filter=".filter-design">Design</li>
-        <li data-filter=".filter-strategy">Strategy</li>
-      </ul>
+          <div class="swiper-wrapper">
+            <!-- BaselineTech — Product Development -->
+            <div class="swiper-slide">
+              <article class="ws-card glass">
+                <div class="thumb">
+                  <img src="assets/img/portfolio/baselinetec-devdoc-thumb.jpg" alt="BaselineTech — Product Development">
+                </div>
+                <div class="meta">
+                  <h4 class="ink">BaselineTech — Product Development</h4>
+                  <p>0→1 build: discovery, design, execution, cross-functional leadership.</p>
+                </div>
+                <div class="ws-actions">
+                  <a class="btn-ghost" href="assets/docs/BaselineTech Product Development Doc- Generate.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                </div>
+              </article>
+            </div>
 
-      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <!-- BaselineTech — PRD -->
+            <div class="swiper-slide">
+              <article class="ws-card glass">
+                <div class="thumb">
+                  <img src="assets/img/portfolio/baselinetec-prd-thumb.jpg" alt="BaselineTech — PRD">
+                </div>
+                <div class="meta">
+                  <h4 class="ink">BaselineTech — PRD</h4>
+                  <p>Problem, goals, scope, acceptance criteria, milestones.</p>
+                </div>
+                <div class="ws-actions">
+                  <a class="btn-ghost" href="assets/docs/BaselineTech PRD .pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                </div>
+              </article>
+            </div>
 
-        <!-- PRODUCTS: BaselineTech Product Development -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-products">
-          <div class="portfolio-image-wrapper position-relative">
-            <img src="assets/img/portfolio/baselinetec-devdoc-thumb.jpg" class="img-fluid" alt="BaselineTech Product Development Doc" loading="lazy">
+            <!-- Hardware Design Review -->
+            <div class="swiper-slide">
+              <article class="ws-card glass">
+                <div class="thumb">
+                  <img src="assets/img/portfolio/baselinetec-hw-thumb.jpg" alt="Hardware Design Review">
+                </div>
+                <div class="meta">
+                  <h4 class="ink">Hardware Design Review</h4>
+                  <p>Architecture, safety, mechanical/electrical trade-offs, milestones.</p>
+                </div>
+                <div class="ws-actions">
+                  <a class="btn-ghost" href="assets/docs/BaselineTech Hardware Design Review.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Game Design — Mirage -->
+            <div class="swiper-slide">
+              <article class="ws-card glass">
+                <div class="thumb">
+                  <img src="assets/img/portfolio/mirage-thumb.jpg" alt="Game Design — Mirage">
+                </div>
+                <div class="meta">
+                  <h4 class="ink">Game Design — Mirage</h4>
+                  <p>Systems thinking, core loop, progression, player experience.</p>
+                </div>
+                <div class="ws-actions">
+                  <a class="btn-ghost" href="assets/docs/Game Design -Mirage.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- SwiftSwipe -->
+            <div class="swiper-slide">
+              <article class="ws-card glass">
+                <div class="thumb">
+                  <img src="assets/img/portfolio/swiftswipe-thumb.jpg" alt="SwiftSwipe — Product Strategy">
+                </div>
+                <div class="meta">
+                  <h4 class="ink">SwiftSwipe — Product Strategy</h4>
+                  <p>Positioning, user pain points, concept pitch and go-to-market.</p>
+                </div>
+                <div class="ws-actions">
+                  <a class="btn-ghost" href="assets/docs/Swift swipe phone wallet product presentation.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- ImmersivED -->
+            <div class="swiper-slide">
+              <article class="ws-card glass">
+                <div class="thumb">
+                  <img src="assets/img/portfolio/immersived-thumb.jpg" alt="ImmersivED — Executive Summary">
+                </div>
+                <div class="meta">
+                  <h4 class="ink">ImmersivED — Executive Summary</h4>
+                  <p>XR in education: vision, inclusivity, adoption strategy.</p>
+                </div>
+                <div class="ws-actions">
+                  <a class="btn-ghost" href="assets/docs/Executive Summary Final.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Open PDF</a>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="portfolio-info">
-            <h4>BaselineTech — Product Development</h4>
-            <p>0→1 build: discovery, design, execution, cross-functional leadership.</p>
 
-            <!-- 4-image gallery -->
-            <a href="assets/img/portfolio/baselinetech_product_devdoc/baselinetech_product_devdoc_p1_i1.png"
-               class="glightbox preview-link"
-               data-gallery="gallery-bt-devdoc"
-               title="BaselineTech — Product Development"><i class="bi bi-zoom-in"></i></a>
-            <a href="assets/img/portfolio/baselinetech_product_devdoc/baselinetech_product_devdoc_p2_i1.png" class="glightbox" data-gallery="gallery-bt-devdoc" style="display:none"></a>
-            <a href="assets/img/portfolio/baselinetech_product_devdoc/baselinetech_product_devdoc_p3_i1.png" class="glightbox" data-gallery="gallery-bt-devdoc" style="display:none"></a>
-            <a href="assets/img/portfolio/baselinetech_product_devdoc/baselinetech_product_devdoc_p4_i1.png" class="glightbox" data-gallery="gallery-bt-devdoc" style="display:none"></a>
-
-            <!-- PDF -->
-            <a href="assets/docs/BaselineTech Product Development Doc- Generate.pdf"
-               class="details-link" target="_blank" rel="noopener" title="Open PDF">
-              <i class="bi bi-link-45deg"></i>
-            </a>
-          </div>
+          <div class="ws-prev swiper-button-prev"></div>
+          <div class="ws-next swiper-button-next"></div>
+          <div class="ws-dots swiper-pagination"></div>
         </div>
+      </div>
+    </section>
+    <!-- /WORK SAMPLES -->
 
-        <!-- REQUIREMENTS: BaselineTech PRD -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-requirements">
-          <div class="portfolio-image-wrapper position-relative">
-            <img src="assets/img/portfolio/baselinetec-prd-thumb.jpg" class="img-fluid" alt="BaselineTech PRD" loading="lazy">
-          </div>
-          <div class="portfolio-info">
-            <h4>BaselineTech — PRD</h4>
-            <p>Problem, goals, scope, acceptance criteria, milestones.</p>
-
-            <a href="assets/img/portfolio/baselinetec-prd-thumb.jpg"
-               title="BaselineTech — PRD"
-               data-gallery="portfolio-gallery-requirements"
-               class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-
-            <a href="assets/docs/BaselineTech PRD .pdf"
-               class="details-link" target="_blank" rel="noopener" title="Open PDF">
-              <i class="bi bi-link-45deg"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- DESIGN: Hardware Design Review -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-          <div class="portfolio-image-wrapper position-relative">
-            <img src="assets/img/portfolio/baselinetec-hw-thumb.jpg" class="img-fluid" alt="Hardware Design Review" loading="lazy">
-          </div>
-          <div class="portfolio-info">
-            <h4>Hardware Design Review</h4>
-            <p>Architecture, safety, mechanical/electrical trade-offs, milestones.</p>
-
-            <!-- 4-image gallery -->
-            <a href="assets/img/portfolio/baselinetech_hw_review/baselinetech_hw_review_p1_i1.png"
-               class="glightbox preview-link"
-               data-gallery="gallery-bt-hw"
-               title="Hardware Design Review"><i class="bi bi-zoom-in"></i></a>
-            <a href="assets/img/portfolio/baselinetech_hw_review/baselinetech_hw_review_p2_i1.png" class="glightbox" data-gallery="gallery-bt-hw" style="display:none"></a>
-            <a href="assets/img/portfolio/baselinetech_hw_review/baselinetech_hw_review_p3_i1.png" class="glightbox" data-gallery="gallery-bt-hw" style="display:none"></a>
-            <a href="assets/img/portfolio/baselinetech_hw_review/baselinetech_hw_review_p4_i1.png" class="glightbox" data-gallery="gallery-bt-hw" style="display:none"></a>
-
-            <a href="assets/docs/BaselineTech Hardware Design Review.pdf"
-               class="details-link" target="_blank" rel="noopener" title="Open PDF">
-              <i class="bi bi-link-45deg"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- DESIGN: Game Design — Mirage -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-          <div class="portfolio-image-wrapper position-relative">
-            <img src="assets/img/portfolio/mirage-thumb.jpg" class="img-fluid" alt="Game Design — Mirage" loading="lazy">
-          </div>
-          <div class="portfolio-info">
-            <h4>Game Design — Mirage</h4>
-            <p>Systems thinking, core loop, progression, player experience.</p>
-
-            <!-- 4-image gallery -->
-            <a href="assets/img/portfolio/mirage_game_design/mirage_game_design_p1_i1.png"
-               class="glightbox preview-link"
-               data-gallery="gallery-mirage"
-               title="Game Design — Mirage"><i class="bi bi-zoom-in"></i></a>
-            <a href="assets/img/portfolio/mirage_game_design/mirage_game_design_p2_i1.png" class="glightbox" data-gallery="gallery-mirage" style="display:none"></a>
-            <a href="assets/img/portfolio/mirage_game_design/mirage_game_design_p3_i1.png" class="glightbox" data-gallery="gallery-mirage" style="display:none"></a>
-            <a href="assets/img/portfolio/mirage_game_design/mirage_game_design_p4_i1.png" class="glightbox" data-gallery="gallery-mirage" style="display:none"></a>
-
-            <a href="assets/docs/Game Design -Mirage.pdf"
-               class="details-link" target="_blank" rel="noopener" title="Open PDF">
-              <i class="bi bi-link-45deg"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- STRATEGY: SwiftSwipe -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-          <div class="portfolio-image-wrapper position-relative">
-            <img src="assets/img/portfolio/swiftswipe-thumb.jpg" class="img-fluid" alt="SwiftSwipe Phone Wallet" loading="lazy">
-          </div>
-          <div class="portfolio-info">
-            <h4>SwiftSwipe — Product Strategy</h4>
-            <p>Positioning, user pain points, concept pitch and go-to-market.</p>
-
-            <a href="assets/img/portfolio/swiftswipe-thumb.jpg"
-               title="SwiftSwipe — Product Strategy"
-               data-gallery="portfolio-gallery-strategy"
-               class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-
-            <a href="assets/docs/Swift swipe phone wallet product presentation.pdf"
-               class="details-link" target="_blank" rel="noopener" title="Open PDF">
-              <i class="bi bi-link-45deg"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- STRATEGY: ImmersivED -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-          <div class="portfolio-image-wrapper position-relative">
-            <img src="assets/img/portfolio/immersived-thumb.jpg" class="img-fluid" alt="ImmersivED Executive Summary" loading="lazy">
-          </div>
-          <div class="portfolio-info">
-            <h4>ImmersivED — Executive Summary</h4>
-            <p>XR in education: vision, inclusivity, adoption strategy.</p>
-
-            <a href="assets/img/portfolio/immersived-thumb.jpg"
-               title="ImmersivED — Executive Summary"
-               data-gallery="portfolio-gallery-strategy"
-               class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-
-            <a href="assets/docs/Executive Summary Final.pdf"
-               class="details-link" target="_blank" rel="noopener" title="Open PDF">
-              <i class="bi bi-link-45deg"></i>
-            </a>
-          </div>
-        </div>
-
-      </div><!-- End Portfolio Container -->
-    </div>
-  </div>
-</section>
-<!-- /Portfolio Section -->
-  
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
@@ -388,13 +381,13 @@
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+        <div class="info-wrap glass" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-5">
             <div class="col-lg-4">
               <div class="info-item d-flex align-items-center">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
-                  <h3>Address</h3>
+                  <h3>Location</h3>
                   <p>Boston, MA</p>
                 </div>
               </div>
@@ -420,8 +413,8 @@
           </div>
         </div>
 
-        <!-- Optional contact form -->
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+        <!-- Optional contact form (works if forms/contact.php is configured) -->
+        <form action="forms/contact.php" method="post" class="php-email-form glass" data-aos="fade-up" data-aos-delay="300">
           <div class="row gy-4">
             <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
             <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Your Email" required></div>
@@ -437,10 +430,11 @@
         </form>
       </div>
     </section>
-    <!-- /Contact Section -->
+    <!-- /CONTACT -->
 
   </main>
 
+  <!-- Footer -->
   <footer id="footer" class="footer accent-background">
     <div class="container">
       <div class="copyright text-center">
@@ -448,7 +442,6 @@
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="#"><i class="bi bi-twitter-x"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
         <a href="#"><i class="bi bi-linkedin"></i></a>
       </div>
@@ -462,19 +455,16 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
+  <!-- Main JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

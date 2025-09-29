@@ -44,23 +44,38 @@ p.section-subtitle {
   z-index: 999;
   transition: all 0.3s ease;
   padding: 20px 40px;
-}
-
-.header.transparent {
   background: transparent;
 }
 
 .header.scrolled {
   background: #000;
+  box-shadow: 0 6px 24px rgba(0,0,0,.25);
 }
 
 .header .logo {
-  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #111;
+  border-radius: 9999px;
   font-weight: 700;
-  color: white;
-  background: #000;
-  border-radius: 50%;
-  padding: 10px 15px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+@media (max-width: 575px) {
+  .logo-badge {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .navmenu ul {
@@ -69,7 +84,7 @@ p.section-subtitle {
 }
 
 .navmenu a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -77,6 +92,11 @@ p.section-subtitle {
 
 .header.scrolled .navmenu a {
   color: #fff;
+  opacity: 0.9;
+}
+
+.header.scrolled .navmenu a:hover {
+  opacity: 1;
 }
 
 .navmenu a:hover {
@@ -103,39 +123,56 @@ p.section-subtitle {
   margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 1.5rem;
-  font-weight: 400;
+.hero .lead .typed {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,.45);
 }
 
-/* Floating gradient text chips */
-.floating-chips {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+.hero .lead {
+  min-height: 60px;
+}
+
+/* Hero floating bubbles */
+.hero-bubbles {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
-  width: 80%;
+  gap: 14px;
+  margin-top: 28px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
 }
 
-.chip {
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-size: 0.9rem;
+.bubble {
+  background: rgba(255,255,255,.85);
+  color: #111;
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+  padding: 10px 14px;
+  border-radius: 9999px;
   font-weight: 600;
-  background: linear-gradient(45deg, #00c3ff, #7d2ae8);
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  animation: float 6s ease-in-out infinite;
+  font-size: 14px;
+  animation: bob 5s ease-in-out infinite;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+.bubble:nth-child(odd) {
+  animation-duration: 6s;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 575px) {
+  .bubble {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
 }
 
 /* -----------------------------

@@ -8,9 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ------------------------------
      Navbar scroll color change
   ------------------------------ */
-  const header = document.querySelector(".header");
+  const header = document.querySelector("#header");
+  const hero = document.querySelector("#hero");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 80) {
+    const heroHeight = hero ? hero.offsetHeight : 100;
+    if (window.scrollY > heroHeight - 80) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");

@@ -1657,7 +1657,7 @@ section,
 .services .service-item {
   position: relative;
   padding: 0;
-  height: 260px;                 /* adjust as you like */
+  height: 300px;                 /* Fixed height for consistency */
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(0,0,0,0.12);
@@ -1675,9 +1675,9 @@ section,
   transition: transform .45s ease, filter .45s ease;
 }
 
-/* Always-visible title pill at top */
+/* Always-visible title pill at bottom-left */
 .services .service-item .title {
-  position: absolute; top: 12px; left: 12px;
+  position: absolute; bottom: 12px; left: 12px;
   z-index: 3;
   padding: 8px 12px;
   background: rgba(10,10,10,0.65);
@@ -1704,15 +1704,40 @@ section,
 .services .service-item .desc p {
   margin: 0; font-size: 14px; line-height: 1.35; opacity: .95;
   max-width: 90%;
+  /* Line clamping for 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Hover effects */
-.services .service-item:hover .icon img {
+/* Hover and focus effects */
+.services .service-item:hover .icon img,
+.services .service-item:focus-within .icon img {
   transform: scale(1.08);
   filter: brightness(0.8) saturate(1.05);
 }
-.services .service-item:hover .desc {
+.services .service-item:hover .desc,
+.services .service-item:focus-within .desc {
   opacity: 1; transform: translateY(0);
+}
+
+/* Keyboard focus accessibility */
+.services .service-item {
+  position: relative;
+  /* Make the card focusable */
+  cursor: pointer;
+}
+
+.services .service-item:focus {
+  outline: 2px solid var(--accent-color, #007bff);
+  outline-offset: 2px;
+}
+
+.services .service-item:focus .desc {
+  opacity: 1; 
+  transform: translateY(0);
 }
 
 /* Optional lift on hover */
@@ -2010,7 +2035,7 @@ h2 {
 .services .service-item {
   position: relative !important;
   padding: 0 !important;
-  height: 280px !important;
+  height: 300px !important;
   background-size: cover !important;
   background-position: center !important;
   border-radius: 18px !important;
@@ -2120,6 +2145,10 @@ button:focus-visible,
 }
 
 .services .service-item .title {
+  position: absolute !important;
+  bottom: 12px !important;
+  left: 12px !important;
+  z-index: 3 !important;
   background: rgba(0, 0, 0, 0.8) !important;
   color: #fff !important;
   font-weight: 700 !important;
@@ -2137,6 +2166,12 @@ button:focus-visible,
   font-size: 15px !important;
   line-height: 1.4 !important;
   font-weight: 500 !important;
+  /* Line clamping for 3 lines */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 /* 8. Responsive Improvements */
@@ -2150,7 +2185,7 @@ button:focus-visible,
   }
   
   .services .service-item {
-    height: 240px !important;
+    height: 280px !important;
   }
 }
 
@@ -2160,7 +2195,7 @@ button:focus-visible,
   }
   
   .services .service-item {
-    height: 200px !important;
+    height: 260px !important;
   }
 }
 

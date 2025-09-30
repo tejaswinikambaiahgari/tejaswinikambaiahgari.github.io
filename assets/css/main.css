@@ -66,6 +66,9 @@ p.section-subtitle {
 .navmenu ul {
   display: flex;
   gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navmenu a {

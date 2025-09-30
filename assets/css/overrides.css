@@ -50,23 +50,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .simple-logo {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background-color: white;
-  color: black;
+  background: transparent;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: 700;
   font-family: var(--primary-font);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* When header is transparent, use subtle translucent style */
+#header:not(.scrolled) .simple-logo {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* When scrolled, slightly more contrast */
+#header.scrolled .simple-logo {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .simple-logo:hover {
   transform: scale(1.05);
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .sitename {
@@ -144,16 +160,29 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  /* Dark overlay for dimming */
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35));
   z-index: 2;
+}
+
+/* Add vignette effect (darker corners) */
+.hero-scrim::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
 }
 
 .hero .container {
   position: relative;
   z-index: 3;
   text-align: center;
-  /* Move content about 1 inch (72px) lower from center */
-  margin-top: 72px;
+  /* Move content about 1 inch (96px) lower from center on desktop */
+  margin-top: 96px;
   animation: heroFadeIn 1s ease-out;
 }
 
@@ -175,19 +204,25 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  /* Glass/glow effect */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5),
+               0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .hero .lead {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
+  /* Glass/glow effect */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5),
+               0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .hero .lead .typed {
   font-weight: 700;
-  /* Increase typed text size for better visual balance */
-  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  /* Increase typed text size by 12-15% for better visual balance */
+  font-size: clamp(2.0rem, 3.6vw, 2.7rem);
 }
 
 /* Floating Impact Chips */
@@ -244,8 +279,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .about img {
   max-width: 280px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  transform: translateZ(0);
+  transition: transform 0.3s ease;
+}
+
+/* Shift image right on desktop by reducing margin */
+@media (min-width: 992px) {
+  .about .col-lg-5 {
+    padding-right: 0;
+    margin-left: -2rem;
+  }
+  
+  .about img {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 .about-title {
@@ -271,6 +321,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .skills-carousel {
   padding: 2rem 0;
+  /* Add extra top spacing to center the section */
+  padding-top: 4rem;
 }
 
 .skills-swiper {
@@ -283,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
@@ -296,7 +348,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .skill-card:hover img {
@@ -308,29 +360,44 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
   color: white;
   padding: 1.5rem;
-  transform: translateY(100%);
-  transition: all 0.3s ease;
-}
-
-.skill-card:hover .skill-meta {
+  /* Make title always visible */
   transform: translateY(0);
+  transition: all 0.2s ease;
+  /* Fixed height to prevent layout shift */
+  min-height: 80px;
 }
 
 .skill-meta h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  /* Keep title always visible */
+  opacity: 1;
 }
 
 .skill-meta p {
   font-size: 0.9rem;
   line-height: 1.4;
-  opacity: 0.9;
   margin: 0;
+  /* Hide description by default */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease, max-height 0.2s ease;
+}
+
+/* Show description on hover without layout shift */
+.skill-card:hover .skill-meta {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95) 0%, rgba(17, 24, 39, 0.95) 100%);
+}
+
+.skill-card:hover .skill-meta p {
+  opacity: 1;
+  max-height: 100px;
 }
 
 .swiper-button-prev,
@@ -341,13 +408,14 @@ h1, h2, h3, h4, h5, h6 {
   height: 40px;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background: var(--primary-gradient);
+  background: rgba(31, 41, 55, 0.9);
   color: white;
+  transform: scale(1.05);
 }
 
 .swiper-button-prev::after,
@@ -359,6 +427,11 @@ h1, h2, h3, h4, h5, h6 {
 /* ========================================
    PORTFOLIO / WORK SAMPLES
 ======================================== */
+
+/* Add extra spacing below Work Samples title */
+#portfolio .section-title {
+  margin-bottom: 1.25rem;
+}
 
 .portfolio-filters {
   display: flex;
@@ -375,15 +448,15 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid #e5e7eb;
   border-radius: 25px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-weight: 500;
   color: var(--text-light);
 }
 
 .portfolio-filters li:hover,
 .portfolio-filters li.filter-active {
-  background: var(--primary-gradient);
-  border-color: transparent;
+  background: var(--text-dark);
+  border-color: var(--text-dark);
   color: white;
 }
 
@@ -396,7 +469,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 240px;
   object-fit: cover;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .portfolio-item:hover .thumb {
@@ -428,16 +501,17 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: var(--primary-gradient);
+  background: rgba(31, 41, 55, 0.9);
   color: white;
   border-radius: 50%;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .details-link:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(17, 24, 39, 1);
   color: white;
 }
 
@@ -448,30 +522,45 @@ h1, h2, h3, h4, h5, h6 {
 .contact .btn {
   font-family: var(--body-font);
   font-weight: 500;
-  border-radius: 8px;
-  padding: 12px 24px;
-  transition: all 0.3s ease;
+  border-radius: 30px;
+  padding: 14px 32px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .contact .btn-dark {
-  background: var(--primary-gradient);
-  border: none;
+  background: rgba(31, 41, 55, 0.95);
+  border-color: rgba(31, 41, 55, 0.95);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .contact .btn-dark:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background: rgba(17, 24, 39, 1);
+  border-color: rgba(17, 24, 39, 1);
+  color: white;
 }
 
 .contact .btn-outline-dark {
-  border: 2px solid var(--text-dark);
+  border: 2px solid rgba(31, 41, 55, 0.9);
   color: var(--text-dark);
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .contact .btn-outline-dark:hover {
-  background: var(--text-dark);
+  background: rgba(31, 41, 55, 0.95);
+  border-color: rgba(31, 41, 55, 0.95);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* ========================================
@@ -494,12 +583,12 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   border-radius: 50%;
   margin: 0 10px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .social-links a:hover {
-  background: var(--primary-gradient);
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   color: white;
 }
@@ -514,11 +603,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .hero .container {
-    margin-top: 40px; /* Reduce offset on mobile */
+    margin-top: 48px; /* Reduce offset on mobile (about half) */
   }
   
   .hero .lead .typed {
-    font-size: clamp(1.4rem, 4vw, 1.8rem); /* Adjust typed text for mobile */
+    font-size: clamp(1.5rem, 4vw, 1.9rem); /* Adjust typed text for mobile */
   }
   
   .skill-card {
@@ -548,6 +637,17 @@ h1, h2, h3, h4, h5, h6 {
   .portfolio-filters li {
     padding: 6px 15px;
     font-size: 0.9rem;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

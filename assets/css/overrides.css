@@ -285,11 +285,19 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.3s ease;
 }
 
-/* Shift image right on desktop by reducing margin */
+/* Shift image right on desktop and expand text container */
 @media (min-width: 992px) {
   .about .col-lg-5 {
     padding-right: 0;
     margin-left: -2rem;
+    flex: 0 0 35%; /* Reduce image column width */
+    max-width: 35%;
+  }
+  
+  .about .col-lg-7 {
+    flex: 0 0 65%; /* Expand text column width */
+    max-width: 65%;
+    padding-left: 2.5rem; /* Reduce gap between photo and text */
   }
   
   .about img {
@@ -318,6 +326,7 @@ h1, h2, h3, h4, h5, h6 {
 /* New About Section Styles */
 .about-content {
   animation: fadeInUp 0.8s ease-out;
+  max-width: 800px; /* Add max-width for better readability */
 }
 
 @keyframes fadeInUp {
@@ -375,23 +384,31 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-light);
-  margin-bottom: 1rem;
-  padding-left: 1.75rem;
+  margin-bottom: 1.25rem; /* Increased spacing between bullets */
+  padding-left: 1.5rem;
   position: relative;
+  transition: all 0.2s ease; /* Add smooth hover transition */
+  font-weight: 400; /* Consistent professional font weight */
 }
 
 .about-impact-list li::before {
-  content: "→";
+  content: "•"; /* Changed from arrow to circular dot */
   position: absolute;
   left: 0;
-  color: #4f46e5;
+  color: #1f2937; /* Changed from blue to black */
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* Slightly larger for better visibility */
+  line-height: 1.7; /* Match text line-height for alignment */
+}
+
+.about-impact-list li:hover {
+  color: #1f2937; /* Text darkens on hover */
+  padding-left: 1.7rem; /* Subtle shift on hover */
 }
 
 .about-impact-list li strong {
   color: var(--text-dark);
-  font-weight: 600;
+  font-weight: 600; /* Keep keywords bold */
 }
 
 /* Mobile responsive adjustments */
@@ -411,7 +428,16 @@ h1, h2, h3, h4, h5, h6 {
   
   .about-impact-list li {
     font-size: 1rem;
-    padding-left: 1.5rem;
+    padding-left: 1.25rem; /* Slightly reduced on mobile */
+    margin-bottom: 1rem; /* Maintain good spacing */
+  }
+  
+  .about-impact-list li::before {
+    font-size: 1.2rem; /* Slightly smaller bullet on mobile */
+  }
+  
+  .about-content {
+    max-width: 100%; /* Remove max-width constraint on mobile */
   }
 }
 

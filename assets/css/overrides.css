@@ -181,8 +181,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 3;
   text-align: center;
-  /* Move content about 1 inch (96px) lower from center on desktop */
-  margin-top: 96px;
+  /* Move content about 2 inches (192px) lower from center on desktop */
+  margin-top: 192px;
   animation: heroFadeIn 1s ease-out;
 }
 
@@ -209,6 +209,17 @@ h1, h2, h3, h4, h5, h6 {
                0 0 20px rgba(255, 255, 255, 0.1);
 }
 
+/* Add gradient color to the name "Tejaswini K" */
+.hero h1 {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  /* Enhanced glow effect for the gradient text */
+  filter: drop-shadow(0 2px 10px rgba(251, 191, 36, 0.4));
+}
+
 .hero .lead {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
@@ -225,50 +236,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2.0rem, 3.6vw, 2.7rem);
 }
 
-/* Floating Impact Chips */
+/* Floating Impact Chips - HIDDEN */
 .impact-chips {
-  position: static;
-  transform: none;
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  pointer-events: auto;
-  z-index: 2;
-}
-
-.impact-chips .chip {
-  position: static;
-  padding: 8px 16px;
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  box-shadow: none;
-  animation: none;
-  transform: none;
-  white-space: nowrap;
-  margin: 0;
-}
-
-.chip:nth-child(1) { animation-delay: 0s; }
-.chip:nth-child(2) { animation-delay: 1.2s; }
-.chip:nth-child(3) { animation-delay: 2.4s; }
-.chip:nth-child(4) { animation-delay: 3.6s; }
-.chip:nth-child(5) { animation-delay: 4.8s; }
-
-@keyframes float {
-  0%, 100% { 
-    transform: translate(var(--tx, 0), var(--ty, 0)) translateY(0px);
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translate(var(--tx, 0), var(--ty, 0)) translateY(-10px);
-    opacity: 1;
-  }
+  display: none !important;
 }
 
 
@@ -729,7 +699,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .hero .container {
-    margin-top: 48px; /* Reduce offset on mobile (about half) */
+    margin-top: 96px; /* Reduce offset on mobile (about half of desktop) */
   }
   
   .hero .lead .typed {

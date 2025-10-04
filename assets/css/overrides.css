@@ -181,8 +181,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 3;
   text-align: center;
-  /* Move content about 1 inch (96px) lower from center on desktop */
-  margin-top: 96px;
+  /* Move content about 2 inches (192px) lower from center on desktop */
+  margin-top: 192px;
   animation: heroFadeIn 1s ease-out;
 }
 
@@ -209,6 +209,17 @@ h1, h2, h3, h4, h5, h6 {
                0 0 20px rgba(255, 255, 255, 0.1);
 }
 
+/* Accent color for hero name with gradient */
+.hero-name {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  /* Enhanced glow effect for the gradient text */
+  filter: drop-shadow(0 2px 8px rgba(96, 165, 250, 0.4));
+}
+
 .hero .lead {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
@@ -225,33 +236,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2.0rem, 3.6vw, 2.7rem);
 }
 
-/* Floating Impact Chips */
+/* Floating Impact Chips - REMOVED (not used) */
 .impact-chips {
-  position: static;
-  transform: none;
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  pointer-events: auto;
-  z-index: 2;
+  display: none;
 }
 
 .impact-chips .chip {
-  position: static;
-  padding: 8px 16px;
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  box-shadow: none;
-  animation: none;
-  transform: none;
-  white-space: nowrap;
-  margin: 0;
+  display: none;
 }
 
 .chip:nth-child(1) { animation-delay: 0s; }
@@ -729,7 +720,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .hero .container {
-    margin-top: 48px; /* Reduce offset on mobile (about half) */
+    margin-top: 96px; /* Reduce offset on mobile (half of desktop) */
   }
   
   .hero .lead .typed {

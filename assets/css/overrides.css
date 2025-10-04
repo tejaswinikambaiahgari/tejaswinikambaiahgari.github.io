@@ -261,32 +261,98 @@ h1, h2, h3, h4, h5, h6 {
    ABOUT SECTION IMPROVEMENTS
 ======================================== */
 
+/* About section container with max-width and centered layout */
+.about .container {
+  max-width: 1200px !important;
+  margin: 0 auto;
+  padding-left: 5vw !important;
+  padding-right: 5vw !important;
+}
+
+/* About section row - flexbox layout for perfect centering */
+.about .row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4rem !important; /* 64px gap between image and text */
+}
+
+/* Image styling with proper border-radius and shadow */
 .about img {
-  max-width: 280px;
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  max-width: 380px;
+  width: 100%;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
   transform: translateZ(0);
   transition: transform 0.3s ease;
 }
 
-/* Shift image right on desktop and expand text container */
+/* Desktop layout (1920x1080 and similar) */
 @media (min-width: 992px) {
   .about .col-lg-5 {
-    padding-right: 0;
-    margin-left: -2rem;
-    flex: 0 0 35%; /* Reduce image column width */
-    max-width: 35%;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .about .col-lg-7 {
-    flex: 0 0 65%; /* Expand text column width */
-    max-width: 65%;
-    padding-left: 2.5rem; /* Reduce gap between photo and text */
+    flex: 1 1 auto !important;
+    max-width: 680px !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
   .about img {
-    margin-left: auto;
-    margin-right: 0;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet layout (768-1024px) - vertical stack */
+@media (min-width: 768px) and (max-width: 991px) {
+  .about .row {
+    flex-direction: column !important;
+    gap: 3rem !important;
+  }
+  
+  .about .col-lg-5,
+  .about .col-lg-7 {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
+  
+  .about img {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  
+  .about-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile layout (<768px) - image 80% width centered */
+@media (max-width: 767px) {
+  .about .row {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  .about .col-lg-5,
+  .about .col-lg-7 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .about img {
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
   }
 }
 
@@ -395,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600; /* Keep keywords bold */
 }
 
-/* Mobile responsive adjustments */
+/* Mobile responsive adjustments for text content */
 @media (max-width: 991px) {
   .about-heading {
     font-size: 1.8rem;
@@ -422,6 +488,11 @@ h1, h2, h3, h4, h5, h6 {
   
   .about-content {
     max-width: 100%; /* Remove max-width constraint on mobile */
+  }
+  
+  /* Center text on mobile/tablet */
+  .about-content {
+    text-align: center;
   }
 }
 

@@ -271,22 +271,40 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Shift image right on desktop and expand text container */
 @media (min-width: 992px) {
+  /* Add vertical centering and horizontal padding to About section */
+  .about .container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  
+  .about .row {
+    width: 100%;
+  }
+  
   .about .col-lg-5 {
     padding-right: 0;
-    margin-left: -2rem;
-    flex: 0 0 35%; /* Reduce image column width */
-    max-width: 35%;
+    margin-left: 0; /* Remove negative margin to shift image more right */
+    flex: 0 0 38%; /* Slightly increase image column width for better balance */
+    max-width: 38%;
+    display: flex;
+    align-items: center; /* Vertically center the image within its column */
+    justify-content: flex-end; /* Push image to the right within its column */
   }
   
   .about .col-lg-7 {
-    flex: 0 0 65%; /* Expand text column width */
-    max-width: 65%;
-    padding-left: 2.5rem; /* Reduce gap between photo and text */
+    flex: 0 0 62%; /* Adjust text column width */
+    max-width: 62%;
+    padding-left: 3.5rem; /* Balanced gap between photo and text */
+    display: flex;
+    align-items: center; /* Vertically center the text content within its column */
   }
   
   .about img {
     margin-left: auto;
-    margin-right: 0;
+    margin-right: 1rem; /* Small margin to prevent image from touching the edge */
   }
 }
 

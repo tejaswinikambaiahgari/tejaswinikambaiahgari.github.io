@@ -485,11 +485,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .skill-meta h3 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.5rem;
-  /* Keep title always visible with black text */
-  color: #000;
+  /* Keep title always visible with white text for better contrast */
+  color: #FFFFFF;
   opacity: 1;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .skill-meta p {

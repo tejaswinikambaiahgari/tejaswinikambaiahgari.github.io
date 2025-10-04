@@ -57,6 +57,13 @@ const CONFIG = {
       pdf: "assets/docs/BaselineTech-Product-Development-Doc-Generate.pdf"
     },
     {
+      title: "Swift Swipe",
+      description: "New-age phone wallet",
+      filter: "filter-products",
+      image: "assets/img/portfolio/swiftswipe-thumb.jpg",
+      pdf: "assets/docs/SwiftSwipe-Phone-Wallet-Presentation.pdf"
+    },
+    {
       title: "Hardware Design Review",
       description: "Architecture, safety and trade‑offs.",
       filter: "filter-design",
@@ -69,20 +76,6 @@ const CONFIG = {
       filter: "filter-design",
       image: "assets/img/portfolio/mirage-thumb.jpg",
       pdf: "assets/docs/Game-Design-Mirage.pdf"
-    },
-    {
-      title: "SwiftSwipe — Product Strategy",
-      description: "Positioning, pain points, GTM.",
-      filter: "filter-strategy",
-      image: "assets/img/portfolio/swiftswipe-thumb.jpg",
-      pdf: "assets/docs/SwiftSwipe-Phone-Wallet-Presentation.pdf"
-    },
-    {
-      title: "ImmersivED — Executive Summary", 
-      description: "XR in education: vision & adoption.",
-      filter: "filter-strategy",
-      image: "assets/img/portfolio/immersived-thumb.jpg",
-      pdf: "assets/docs/Executive-Summary-ImmersivED.pdf"
     },
     {
       title: "BaselineTech — PRD",

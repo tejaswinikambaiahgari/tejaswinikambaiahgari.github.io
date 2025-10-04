@@ -164,31 +164,18 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  /* Increased dark overlay from 0.35 to 0.45 for better text contrast */
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+  /* Strong vignette overlay with dark center and fully black corners */
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.9) 100%);
   z-index: 2;
-}
-
-/* Add vignette effect (darker corners) */
-.hero-scrim::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Enhanced vignette for better corner darkening */
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
-  pointer-events: none;
 }
 
 .hero .container {
   position: relative;
   z-index: 3;
   text-align: center;
-  /* Move content about 3 inches (288px) lower from center on desktop for better positioning */
-  margin-top: 288px;
-  animation: heroFadeIn 1s ease-out;
+  /* Move content about 3.5 inches (336px) lower from center on desktop - additional 0.5 inch (~48px) added */
+  margin-top: 336px;
+  animation: heroFadeIn 1.5s ease-out;
 }
 
 @keyframes heroFadeIn {
@@ -203,44 +190,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero h1 {
-  font-family: var(--primary-font);
-  font-weight: 800;
+  font-family: 'Poppins', var(--primary-font);
+  font-weight: 700;
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color: white;
+  color: #ffffff;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
-  /* Glass/glow effect with enhanced shadow */
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5),
-               0 0 20px rgba(255, 255, 255, 0.1);
+  /* Clean shadow for depth */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Subtle glass/gradient effect for "I'm Tejaswini K" heading */
+/* Remove gradient effect - use pure white for "Tejaswini K" */
 .hero h1 .hero-name {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* Add subtle text stroke for better readability */
-  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
-  /* Glass glow effect */
-  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2)) 
-          drop-shadow(0 0 12px rgba(255, 255, 255, 0.1));
+  color: #ffffff;
+  /* Remove gradient and webkit effects */
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #ffffff;
+  background-clip: unset;
+  -webkit-text-stroke: none;
+  filter: none;
 }
 
 .hero .lead {
+  font-family: 'Poppins', var(--primary-font);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  color: #dcdcdc;
   margin-bottom: 2rem;
-  /* Glass/glow effect */
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5),
-               0 0 15px rgba(255, 255, 255, 0.1);
+  /* Clean shadow for depth */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero .lead .typed {
-  font-weight: 700;
+  font-weight: 500;
   /* Increase typed text size by 12-15% for better visual balance */
   font-size: clamp(2.0rem, 3.6vw, 2.7rem);
+  color: #dcdcdc;
 }
 
 /* Floating Impact Chips - REMOVED (not used) */
@@ -734,7 +720,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .hero .container {
-    margin-top: 96px; /* Reduce offset on mobile (half of desktop) */
+    margin-top: 120px; /* Proportional increase on mobile (was 96px, now 120px for the additional 0.5 inch) */
   }
   
   .hero .lead .typed {

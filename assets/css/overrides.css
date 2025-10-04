@@ -62,27 +62,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-family: var(--primary-font);
   transition: all 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  /* Thin white circle border with no fill on hero */
+  border: 2px solid white;
+  /* Remove any backdrop */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
-/* When header is transparent, use subtle translucent style */
+/* When header is transparent (on hero), use white border and text */
 #header:not(.scrolled) .simple-logo {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border: 2px solid white;
+  color: white;
 }
 
-/* When scrolled, slightly more contrast */
+/* When scrolled, switch to black border and text for contrast on dark navbar */
 #header.scrolled .simple-logo {
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  border: 2px solid black;
+  color: black;
 }
 
 .simple-logo:hover {
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  /* Keep hover effect subtle without background */
+  opacity: 0.8;
 }
 
 .sitename {
@@ -160,8 +164,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  /* Dark overlay for dimming */
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35));
+  /* Increased dark overlay from 0.35 to 0.45 for better text contrast */
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
   z-index: 2;
 }
 
@@ -173,7 +177,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* Enhanced vignette for better corner darkening */
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
   pointer-events: none;
 }
 
@@ -181,8 +186,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 3;
   text-align: center;
-  /* Move content about 2 inches (192px) lower from center on desktop */
-  margin-top: 192px;
+  /* Move content about 3 inches (288px) lower from center on desktop for better positioning */
+  margin-top: 288px;
   animation: heroFadeIn 1s ease-out;
 }
 
@@ -204,20 +209,22 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
-  /* Glass/glow effect */
+  /* Glass/glow effect with enhanced shadow */
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5),
                0 0 20px rgba(255, 255, 255, 0.1);
 }
 
-/* Accent color for hero name with gradient */
-.hero-name {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+/* Subtle glass/gradient effect for "I'm Tejaswini K" heading */
+.hero h1 .hero-name {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
-  /* Enhanced glow effect for the gradient text */
-  filter: drop-shadow(0 2px 8px rgba(96, 165, 250, 0.4));
+  /* Add subtle text stroke for better readability */
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
+  /* Glass glow effect */
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2)) 
+          drop-shadow(0 0 12px rgba(255, 255, 255, 0.1));
 }
 
 .hero .lead {
@@ -477,9 +484,11 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  color: white;
+  /* Changed from black background to transparent */
+  background: transparent;
+  backdrop-filter: none;
+  /* Changed text color to black for contrast */
+  color: #000;
   padding: 1.5rem;
   /* Make title always visible */
   transform: translateY(0);
@@ -492,7 +501,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  /* Keep title always visible */
+  /* Keep title always visible with black text */
+  color: #000;
   opacity: 1;
 }
 
@@ -500,6 +510,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   line-height: 1.4;
   margin: 0;
+  /* Black text for description */
+  color: #000;
   /* Hide description by default */
   opacity: 0;
   max-height: 0;
@@ -507,9 +519,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.2s ease, max-height 0.2s ease;
 }
 
-/* Show description on hover without layout shift */
+/* Show description on hover - keep transparent but show text */
 .skill-card:hover .skill-meta {
-  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95) 0%, rgba(17, 24, 39, 0.95) 100%);
+  /* Add subtle white background on hover for better readability */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
 }
 
 .skill-card:hover .skill-meta p {
@@ -547,7 +561,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Add extra spacing below Work Samples title */
 #portfolio .section-title {
-  margin-bottom: 1.25rem;
+  margin-bottom: 2.5rem;
+}
 }
 
 .portfolio-filters {

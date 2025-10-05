@@ -513,6 +513,10 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(8px);
 }
 
+.skill-card:hover .skill-meta h3 {
+  color: #000;
+}
+
 .skill-card:hover .skill-meta p {
   opacity: 1;
   max-height: 100px;
